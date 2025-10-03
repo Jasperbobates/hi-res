@@ -1,11 +1,11 @@
 {
-    "headerTaglineOne": "Hi-Res by Jasper Bates",
-    "headerTaglineTwo": "Resolution",
-    "headerTaglineThree": "Resilience",
-    "headerTaglineFour": "Resolve",
-    "showCursor": true,
+    "name": "Hi-Res by Jasper Bates",
+    "headerTaglineOne": "Resolution",
+    "headerTaglineTwo": "Resilience",
+    "headerTaglineThree": "Resolve",
+        "showCursor": true,
     "showBlog": true,
-    "darkMode": false,
+    "darkMode": true,
     "showResume": true,
     "socials": [
         {
@@ -29,103 +29,130 @@
         },
         {
             "id": "2",
-            "title": "",
-            "description": "Web Development",
+            "title": "Where to grow my beans?",
+            "description": "Identifying optimal zones for coffee bean plantations in Hawaiʻi island",
             "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
             "url": "http://chetanverma.com/"
         },
         {
             "id": "3",
-            "title": "Project Three",
-            "description": "Design",
+            "title": "Public investments: when and how?",
+            "description": "Research on effective government spending, in collaboration with the Dutch government",
             "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
             "url": "http://chetanverma.com/"
         },
         {
             "id": "4",
-            "title": "Project Four",
-            "description": "Marketing",
+            "title": "Animals need infrastructure too",
+            "description": "Assessing optimal ecoduct placement in the Gooi",
             "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
             "url": "http://chetanverma.com/"
         },
         {
             "id": "5",
-            "title": "Project Five",
-            "description": "Development",
+            "title": "Take some time off fathers ",
+            "description": "Monitoring the change in take-up of paternity leave following a Dutch parental leave reform",
             "imageSrc": "https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-            "url": "http://chetanverma.com/"
-        },
-        {
-            "id": "6",
-            "title": "Project Six",
-            "description": "Design & Development",
-            "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
             "url": "http://chetanverma.com/"
         }
     ],
     "services": [
         {
             "id": "1",
-            "title": "Art Direction",
-            "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+            "title": "1. Data analysis",
+            "description": "triangulate quantitative and qualitative data from various sources to evaluate impacts."
         },
         {
             "id": "2",
-            "title": "Branding",
-            "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+            "title": "2. Visualization of data",
+            "description": "Visuals need to be informative, without sacrificing attractiveness."
         },
         {
             "id": "3",
-            "title": "Web Design",
-            "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+            "title": "3. Communicate findings",
+            "description": "3. tailor messaging to the target audience using the visuals as narratives."
         },
         {
             "id": "4",
-            "title": "3D Design",
-            "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+            "title": "4. Monitor, evaluate, learn",
+            "description": "Apply statistics to measure the effectiveness of interventions."
         }
     ],
-    "aboutpara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "aboutpara": "Hi-Res stands for High Resolution, High Resilience, and High Resolve. It seeks an alternative way to convey environmental and socio-economic data with high resolution, but is accessible to all. It focuses on resilience, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes resolve, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, a environmental economists with a passion for spatial analytics and data-driven solutions.",
     "resume": {
-        "tagline": "👋  I'm a software engineer, product designer.",
-        "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
+        "tagline": "👋  I'm Jasper Bonesmo Bates. An environmental economist.",
+        "description": "",
         "experiences": [
             {
                 "id": "1",
-                "dates": "March 2022 - Present",
+                "dates": "October 2024 - August 2025",
                 "type": "Full Time",
-                "position": "Frontend Engineer at X",
-                "bullets": "Bullet One, Bullet Two"
+                "position": "Research Assistant at the University of Amsterdam - Microeconomics department",
+                "bullets": "Managed and cleaned 1M+ household records., Visualized plots for funding proposals that directly contributed to securing €20,000 in project financing.,"
             },
             {
-                "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
-                "dates": "July 2020 - March 2022",
+                "id": "2",
+                "dates": "October 2024 - August 2025",
                 "type": "Full Time",
-                "position": "Frontend Engineer at X",
-                "bullets": "Worked on the frontend of a React application, Worked on the frontend of a React application"
+                "position": "Lecturer at the University of Amsterdam - PPLE College",
+                "bullets": "Led tutorials for 120+ students across 5 economics courses., Designed lecture materials and workshops linking core economic concepts to real-world applications., Advised a master’s thesis on econometric identification strategies."
+            },
+             {
+                "id": "3",
+                "dates": "June 2023 - December 2023",
+                "type": "Full Time",
+                "position": "Researcher at the Dutch Central Planning Bureau (CPB).",
+                "bullets": "Synthesized findings from 30+ empirical policy studies into a CPB policy brief which was later cited in government advisory discussions on public investment., Presented my recommendations to a panel of senior directors sharpening the bureau’s position on public financing."
+            },
+            {
+                "id": "4",
+                "dates": "May 2022 - August 2022",
+                "type": "Full Time",
+                "position": "Global Business Development Intern at TED Conferences",
+                "bullets": "Designed and pitched a WhatsApp distribution channel to senior management by synthesizing global viewership data. It launched in Oct 2024 and has since reached over 600,000 followers within its first year."
+            },
+             {
+                "id": "5",
+                "dates": "October 2021 - January 2022",
+                "type": "Full Time",
+                "position": "Field volunteer at Nea Kavala Refugee Camp, Greece",
+                "bullets": "Coordinated a 10-member volunteer team delivering digital literacy and career workshops to 20 refugees to improve participants’ employability and access to online resources"
             }
         ],
-        "education": {
-            "universityName": "University X",
-            "universityDate": "2016-2020",
-            "universityPara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-        },
+        "education": [ 
+            { 
+                "universityName": "University of Amsterdam", 
+                "universityDate": "2022-2024", 
+                "universityPara": "Master of Science in Environmental Economics" 
+            }, 
+                        { 
+                "universityName": "University of Oslo", 
+                "universityDate": "Spring 2021", 
+                "universityPara": "Semester study in Physics." 
+            },
+            { 
+                "universityName": "IE University (Spain)", 
+                "universityDate": "2016-2020", 
+                "universityPara": "Bachelor of Arts in International Relations" 
+            }, 
+            { 
+                "universityName": "Hong Kong University", 
+                "universityDate": "Fall 2019", 
+                "universityPara": "Exchange at the Faculty of Social Sciences" 
+            } 
+        ]
+    },
+    "skills": {
         "languages": [
-            "Javascript",
-            "HTML5",
-            "CSS",
-            "Python",
-            "Go"
+            "English",
+            "Norwegian",
+            "Spanish",
+            "French"
         ],
-        "frameworks": [
-            "React",
-            "Typescript",
-            "NodeJs"
-        ],
-        "others": [
-            "Figma",
-            "AdobeXD",
-            "AWS"
+       "others": [
+            "Stata",
+            "ArcGIS",
+            "R"
         ]
     }
 }
