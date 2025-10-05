@@ -2,11 +2,13 @@
   "name": "react-portfolio-template",
   "version": "3.0",
   "private": true,
+  "homepage": "https://jasperbobates.github.io/hi-res",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "autopush": "git add . && git commit -m \"Auto-commit: Changes saved on $(date)\" && git push origin main"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
