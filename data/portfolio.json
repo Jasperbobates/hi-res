@@ -3,7 +3,7 @@
     "headerTaglineOne": "Resolution",
     "headerTaglineTwo": "Resilience",
     "headerTaglineThree": "Resolve",
-        "showCursor": true,
+    "showCursor": false,
     "showBlog": true,
     "darkMode": true,
     "showResume": true,
@@ -17,6 +17,11 @@
             "id": "2",
             "title": "Email",
             "link": "mailto:jasperbb@tuta.io"
+        },
+        {
+            "id": "3",
+            "title": "WhatsApp",
+            "link": "https://wa.me/31683820569"
         }
     ],
     "projects": [
@@ -30,22 +35,22 @@
         {
             "id": "2",
             "title": "Where to grow my beans?",
-            "description": "Identifying optimal zones for coffee bean plantations in Hawaiʻi island",
-            "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
+            "description": "Identifying optimal zones for coffee bean plantations on Hawaiʻi island",
+            "imageSrc": "/images/capture.PNG",
             "url": "http://chetanverma.com/"
         },
         {
             "id": "3",
             "title": "Public investments: when and how?",
             "description": "Research on effective government spending, in collaboration with the Dutch government",
-            "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "imageSrc": "/images/CPB.PNG",
             "url": "http://chetanverma.com/"
         },
         {
             "id": "4",
             "title": "Animals need infrastructure too",
             "description": "Assessing optimal ecoduct placement in the Gooi",
-            "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "imageSrc": "/images/Het_Gooi.PNG",
             "url": "http://chetanverma.com/"
         },
         {
@@ -60,7 +65,7 @@
         {
             "id": "1",
             "title": "1. Data analysis",
-            "description": "triangulate quantitative and qualitative data from various sources to evaluate impacts."
+            "description": "Triangulate evidence combining document studies, quantitative data, and qualitative interviews to evaluate the impact of interventions."
         },
         {
             "id": "2",
@@ -70,7 +75,7 @@
         {
             "id": "3",
             "title": "3. Communicate findings",
-            "description": "3. tailor messaging to the target audience using the visuals as narratives."
+            "description": "3. Adapt messaging to the target audience using visuals as narratives, with minimal jargon."
         },
         {
             "id": "4",
@@ -78,7 +83,7 @@
             "description": "Apply statistics to measure the effectiveness of interventions."
         }
     ],
-    "aboutpara": "Hi-Res stands for High Resolution, High Resilience, and High Resolve. It seeks an alternative way to convey environmental and socio-economic data with high resolution, but is accessible to all. It focuses on resilience, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes resolve, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, a environmental economists with a passion for spatial analytics and data-driven solutions.",
+    "aboutpara": "Hi-Res stands for High Resolution, High Resilience, and High Resolve. It seeks an alternative way to convey environmental and socio-economic data with high resolution, but is accessible to all. It focuses on resilience, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes resolve, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an environmental economist with a passion for spatial analytics and data-driven solutions.",
     "resume": {
         "tagline": "👋  I'm Jasper Bonesmo Bates. An environmental economist.",
         "description": "",
