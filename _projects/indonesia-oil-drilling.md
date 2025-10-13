@@ -4,7 +4,7 @@ title: To drill or not to drill?
 tagline: A spatial analysis of oil drilling in Indonesia
 preview: >-
   A comprehensive spatial analysis examining the environmental and economic impacts of oil drilling in Indonesia.
-image: /images/Map.PNG
+image: /images/Map.png
 ---
 
 ### Project Overview
