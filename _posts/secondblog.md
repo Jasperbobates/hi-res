@@ -1,93 +1,43 @@
 ---
-date: '2022-07-08T11:50:54.000Z'
-title: Second Blog
-tagline: This is a Tagline If you want to add.
+date: "2022-07-08T11:50:54.000Z"
+title: Making one man’s trash another man’s treasure.
+tagline: Has the EPR fixed the waste battery market?
 preview: >-
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book.
+  The demand for better and bigger batteries has steadily increased, but so has the battery waste market. How can policies adequately address this growing environmental hazard?
 image: >-
-  https://images.unsplash.com/photo-1656427868828-79a829b92b2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80
+  https://upload.wikimedia.org/wikipedia/commons/c/c4/Electric_batteries.jpg
 ---
 
-# Heading One
+### The demand for batteries has raised environmental concerns due to the significant waste they generate. As of 2019, the amount of end-of-life lithium-ion batteries reached 1.2 million tons (Willuhn, 2019). If improperly disposed of, the heavy metals contained in these batteries pose a threat to ecosystems and human health as toxic chemicals leach into the soil and groundwater or are released into the air during incineration (Hasan & Karmakar, 2022; Huang et al., 2021). Furthermore, inadequate waste management infrastructure and high disposal costs contribute to illegal dumping and, in some cases, exportation of waste to developing countries, perpetuating environmental injustice.
 
-**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+### This situation reflects a classic market failure. Producers of batteries do not fully bear the costs of waste management at end-of-life, creating a negative environmental externality. At the same time, batteries contain a high concentration of critical raw materials, such as lithium and cobalt, making them valuable commodities. However, since they are rare and costly to extract (International Energy Agency, 2021), the positive environmental externalities of recycling waste batteries are not captured. 
 
-## This is Heading Two
+### Recognizing this dual potential, policymakers worldwide have moved towards Extended Producer Responsibility (EPR). Under this regulatory approach, producers are mandated to handle the waste, cover associated costs, and disclose relevant information to the public. As such, the EPR not only establishes a market-driven incentive for battery producers to incorporate more environmentally sustainable production processes but also fosters transparency and accountability in waste management practices. This is also the focus of the research by Compagnoni et al. (2023), who found a positive impact of EPR regulations on collection rates and the marketization of waste batteries.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+### However, while EPR has mitigated the worst aspects of waste disposal, it has not fully “fixed” the battery market. High transaction and processing costs still make large-scale recycling uneconomical, prompting firms to export end-of-life batteries to countries with more advanced recycling infrastructures. This is what the EU’s Critical Minerals Act seeks to tackle, by setting a target of recycling at least 15% of strategic raw materials consumption by 2030 and increasing the share of recycled critical raw materials in manufacturing. Yet these ambitions face headwinds as the battery market is expanding rapidly, and costs are projected to decline by about 10% annually through 2030 (Zambon, 2024). Transitioning from a “take–make–waste” system to a circular economy will inevitably raise short-term costs, potentially slowing growth if passed on to consumers.
 
-### This is Heading Three with `inline code`
+### Additional challenges further limit the effectiveness of EPR. First, technological asymmetries in global recycling capacity mean that much of the value of battery waste is exported to countries with stronger technological endowments, slowing worldwide adoption of circular practices. While patents incentivize innovation in recycling, they also restrict the diffusion of these technologies. To accelerate progress, the EU should support public research projects and facilitate technology transfer to strategic partners. Second, information asymmetries between producers and consumers distort market signals. While the cost for recycling a battery is relatively predictable, the revenues from recovered metals and minerals are highly dependent on the quality, that is, the longevity, recyclability, and polluting characteristics of the battery. If this quality is unobserved by consumers, adverse selection may occur, with buyers favoring cheaper but lower-quality products (Nicolli et al. 2012). On the producer side, this information gap should be reduced by implementing quality rating systems, as well as greater education on the environmental costs of “dirtier” batteries on the consumer side (Council of the EU, 2023).
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+### Lastly, the EPR regulations will not induce shifts towards greener production cycles if informational asymmetries between consumers and producers are significant.  On the producer side, this informational gap should be reduced by implementing quality rating systems. On the consumer side, education and dissemination on the external effects of waste batteries will be crucial (Council of the EU, 2023).
 
-#### This is Heading Four With Code Block
+### Looking ahead, the EPR sets the tone for heightened ambitions for circularity within the EU. Future EPR legislation should, therefore, aim to further extend the regulatory reach and track the carbon footprint of batteries (Melin, 2019). This would extend the application scope of EPR to all batteries with the monitoring of carbon emissions during the production process. On the other hand, double regulation must be avoided to prevent the imposition of penalties on the same battery production entity covered by both EPR and a concurrent carbon tax (Hall & Lutsey, 2018; Zeng, 2017). A strategic balance is thus necessary to maximize regulatory effectiveness without imposing undue burdens on the battery industry.
 
-```
+## The EPR has improved waste-battery collection and created early momentum for circularity, but it has not fully resolved the underlying market failures. To achieve circularity in the battery waste market, the EPR must be complemented with additional policies that promote technological diffusion, address information gaps, and incentivize the scaling of recycling industries.
 
-# Auto-generated based on the server's hostname.
-# Set this to the URL used to access the Firezone Web UI.
-default['firezone']['external_url'] = 'https://firezone.example.com'
+# References
 
-# Specify the path to your SSL cert and private key.
-# If set to nil (default), a self-signed cert will be generated for you.
-default['firezone']['ssl']['certificate'] = '/path/to/cert.pem'
-default['firezone']['ssl']['certificate_key'] = '/path/to/key.pem'
-
-```
-
-##### Heading Five Code With Max Height
-
-```
-
-# Auto-generated based on the server's hostname.
-# Set this to the URL used to access the Firezone Web UI.
-default['firezone']['external_url'] = 'https://firezone.example.com'
-
-# Specify the path to your SSL cert and private key.
-# If set to nil (default), a self-signed cert will be generated for you.
-default['firezone']['ssl']['certificate'] = '/path/to/cert.pem'
-default['firezone']['ssl']['certificate_key'] = '/path/to/key.pem'
-
-# Auto-generated based on the server's hostname.
-# Set this to the URL used to access the Firezone Web UI.
-default['firezone']['external_url'] = 'https://firezone.example.com'
-
-# Specify the path to your SSL cert and private key.
-# If set to nil (default), a self-signed cert will be generated for you.
-default['firezone']['ssl']['certificate'] = '/path/to/cert.pem'
-default['firezone']['ssl']['certificate_key'] = '/path/to/key.pem'
-
-```
-
-## BLockquote
-
-> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-
-## Ordered List with horizontal line
-
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
+- Council adopts new regulation on batteries and waste batteries. (2023, July 10). Council of the European Union. Retrieved December 2, 2023, from https://www.consilium.europa.eu/en/press/press-releases/2023/07/10/council-adopts-new-regulation-on-batteries-and-waste-batteries/
+- Hall, D., & Lutsey, N. (2018). Effects of battery manufacturing on electric vehicle life-cycle greenhouse gas emissions. The International Council on Clean Transportation. https://trid.trb.org/view/1502784.
+- Hans Eric Melin. "Analysis of the climate impact of lithium-ion batteries and how to measure it." Circular Energy Storage Research and Consulting, July 2019. Commissioned by the European Federation for Transport and Environment.
+- Hasan, Md. S., & Karmakar, A. K. (2022). Removal of car battery heavy metals from wastewater by activated carbons: a brief review. Environmental Science and Pollution Research International, 29(49), 73675–73717.
+- Huang, W., Qu, Y., Zhu, Y., Jiang, N., & Huang, W. (2021). A fluorescent tool for sensing the battery-pollution event in soil samples based on Zn2+-triggering ratiometric signals. Journal of Molecular Structure, 1229, 129862-. https://doi.org/10.1016/j.molstruc.2020.129862
+International Energy Agency (2021), The role of critical minerals in clean energy transitions
+- Nicolli, F., Johnstone, N. & Söderholm, P. Resolving failures in recycling markets: the role of technological innovation. Environ Econ Policy Stud 14, 261–288 (2012). https://doi.org/10.1007/s10018-012-0031-9
+- Shuptar-Poryvaieva, N. Y., Gubanova, N. Y., Andryeyeva, N. M., Shevchenko, T., 2020, Examining of portable batteries externalities with focus on consumption and disposal phases.
+- Scrosati, B. (2011). Technology: Charging towards the superbattery. Nature (London), 473(7348), 448–449. https://doi.org/10.1038/473448a
+- Tollefson, J. (2008). Car industry: Charging up the future. Nature (London), 456(7221), 436–440. https://doi.org/10.1038/456436a
+- Willuhn, M. (2019, November 4). Lithium batteries – 1.2m tons ready for recycling by 2030. pv magazine International. https://www.pv-magazine.com/2019/11/04/lithium-batteries-1-2m-tons-ready-for-recycling-by-2030/
+- Zambon, A. (2024). Battery recycling in Europe. DNV. https://www.dnv.com/energy-transition/battery-recycling-in-europe/
+- Zeng, Y. (2017). Indirect double regulation and the carbon ETSs linking: The case of coal-fired generation in the EU and China. Energy Policy, 111, 268–280. https://doi.org/10.1016/j.enpol.2017.09.038
 
 ---
-
-## Unordered List With Horizontal line
-
-- First item
-- Second item
-- Third item
-- Fourth item
-
----
-
-## Links
-
-My favorite search engine is [Duck Duck Go](https://duckduckgo.com).
-
-## Images
-
-![An old rock in the desert](https://images.unsplash.com/photo-1654475677192-2d869348bb4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)

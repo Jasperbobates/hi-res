@@ -1,7 +1,7 @@
 import { useRef } from "react";
+import Router from "next/router";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
-import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
-import Cursor from "../components/Cursor";
+// import Cursor from "../components/Cursor"; // Disabled - blocks all clicks
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -18,6 +18,7 @@ export default function Home() {
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
+  const contactRef = useRef();
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
@@ -40,6 +41,14 @@ export default function Home() {
     });
   };
 
+  const handleContactScroll = () => {
+    window.scrollTo({
+      top: contactRef.current.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   useIsomorphicLayoutEffect(() => {
     stagger(
       [textOne.current, textTwo.current, textThree.current, textFour.current],
@@ -49,8 +58,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+    <div className={`relative`}>
+      {/* {data.showCursor && <Cursor />} */}
       <Head>
         <title>{data.name}</title>
       </Head>
@@ -62,6 +71,7 @@ export default function Home() {
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
+          handleContactScroll={handleContactScroll}
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
@@ -91,7 +101,6 @@ export default function Home() {
             </h1>
           </div>
 
-          <Socials className="mt-2 laptop:mt-5" />
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Work.</h1>
@@ -103,14 +112,14 @@ export default function Home() {
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
-                onClick={() => window.open(project.url)}
+                onClick={() => Router.push(`/projects/${project.slug}`)}
               />
             ))}
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0">
+          <h1 className="tablet:m-10 text-2xl text-bold">The Hi-Res Vision.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -121,21 +130,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* This button should not go into production */}
-        {process.env.NODE_ENV === "development" && (
-          <div className="fixed bottom-5 right-5">
-            <Link href="/edit">
-              <Button type="primary">Edit Data</Button>
-            </Link>
-          </div>
-        )}
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutpara}
           </p>
         </div>
-        <Footer />
+        <div id="contact" ref={contactRef}>
+          <Footer />
+        </div>
       </div>
     </div>
   );

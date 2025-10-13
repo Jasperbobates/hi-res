@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomCursor from "custom-cursor-react";
-import "custom-cursor-react/dist/index.css";
+// import "custom-cursor-react/dist/index.css"; // Disabled - was blocking button clicks
 import { useTheme } from "next-themes";
 
 const Cursor = () => {

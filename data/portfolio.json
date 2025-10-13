@@ -29,36 +29,36 @@
             "id": "1",
             "title": "To drill or not to drill?",
             "description": "A spatial analysis of oil drilling in Indonesia",
-            "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-            "url": "http://chetanverma.com/"
+            "imageSrc": "/images/Map.PNG",
+            "slug": "indonesia-oil-drilling"
         },
         {
             "id": "2",
             "title": "Where to grow my beans?",
             "description": "Identifying optimal zones for coffee bean plantations on Hawaiʻi island",
             "imageSrc": "/images/capture.PNG",
-            "url": "http://chetanverma.com/"
+            "slug": "hawaii-coffee-plantations"
         },
         {
             "id": "3",
             "title": "Public investments: when and how?",
             "description": "Research on effective government spending, in collaboration with the Dutch government",
             "imageSrc": "/images/CPB.PNG",
-            "url": "http://chetanverma.com/"
+            "slug": "public-investments"
         },
         {
             "id": "4",
             "title": "Animals need infrastructure too",
             "description": "Assessing optimal ecoduct placement in the Gooi",
             "imageSrc": "/images/Het_Gooi.PNG",
-            "url": "http://chetanverma.com/"
+            "slug": "ecoduct-placement"
         },
         {
             "id": "5",
             "title": "Take some time off fathers ",
             "description": "Monitoring the change in take-up of paternity leave following a Dutch parental leave reform",
-            "imageSrc": "https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-            "url": "http://chetanverma.com/"
+            "imageSrc": "/images/AGV_takeup.svg",
+            "slug": "paternity-leave-reform"
         }
     ],
     "services": [
@@ -83,81 +83,111 @@
             "description": "Apply statistics to measure the effectiveness of interventions."
         }
     ],
-    "aboutpara": "Hi-Res stands for High Resolution, High Resilience, and High Resolve. It seeks an alternative way to convey environmental and socio-economic data with high resolution, but is accessible to all. It focuses on resilience, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes resolve, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an environmental economist with a passion for spatial analytics and data-driven solutions.",
+    "aboutpara": "Hi-Res stands for High Resolution, High Resilience, and High Resolve. It seeks an alternative way to convey environmental and socio-economic data with high resolution that is accessible to everyone. It focuses on resilience, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes resolve, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an environmental economist with a passion for spatial analytics and data-driven solutions.",
     "resume": {
-        "tagline": "👋  I'm Jasper Bonesmo Bates. An environmental economist.",
+        "tagline": "👋  I'm an environmental economist with 3 years’ experience in research, teaching, and advisory roles. International project experience in Hong Kong, Spain, the Netherlands, Norway, Greece, and the US. Fluent in English, and Norwegian, as well as working proficiency in Spanish and French. Skilled at working across NGOs, multinationals, academia, government, and startups.",
         "description": "",
         "experiences": [
             {
                 "id": "1",
                 "dates": "October 2024 - August 2025",
-                "type": "Full Time",
-                "position": "Research Assistant at the University of Amsterdam - Microeconomics department",
-                "bullets": "Managed and cleaned 1M+ household records., Visualized plots for funding proposals that directly contributed to securing €20,000 in project financing.,"
+                "location": "Amsterdam, Netherlands",
+                "position": "Research Assistant",
+                "employer": "University of Amsterdam - Microeconomics department",
+                "bullets": "Managed and cleaned 1M+ household records.|Visualized plots for funding proposals that directly contributed to securing €20,000 in project financing."
             },
             {
                 "id": "2",
                 "dates": "October 2024 - August 2025",
-                "type": "Full Time",
-                "position": "Lecturer at the University of Amsterdam - PPLE College",
-                "bullets": "Led tutorials for 120+ students across 5 economics courses., Designed lecture materials and workshops linking core economic concepts to real-world applications., Advised a master’s thesis on econometric identification strategies."
+                "location": "Amsterdam, Netherlands",
+                "position": "Lecturer",
+                "employer": "University of Amsterdam - PPLE College",
+                "bullets": "Led tutorials for 120+ students across 5 economics courses.|Designed lecture materials and workshops linking core economic concepts to real-world applications.|Advised a master's thesis on econometric identification strategies."
             },
              {
                 "id": "3",
                 "dates": "June 2023 - December 2023",
-                "type": "Full Time",
-                "position": "Researcher at the Dutch Central Planning Bureau (CPB).",
-                "bullets": "Synthesized findings from 30+ empirical policy studies into a CPB policy brief which was later cited in government advisory discussions on public investment., Presented my recommendations to a panel of senior directors sharpening the bureau’s position on public financing."
+                "location": "The Hague, Netherlands",
+                "position": "Researcher",
+                "employer": "Dutch Central Planning Bureau (CPB)",
+                "bullets": "Synthesized findings from 30+ empirical policy studies into a CPB policy brief which was later cited in government advisory discussions on public investment.|Presented my recommendations to a panel of senior directors sharpening the bureau's position on public financing."
             },
             {
                 "id": "4",
                 "dates": "May 2022 - August 2022",
-                "type": "Full Time",
-                "position": "Global Business Development Intern at TED Conferences",
+                "location": "New York, USA",
+                "position": "Global Business Development Intern",
+                "employer": "TED Conferences",
                 "bullets": "Designed and pitched a WhatsApp distribution channel to senior management by synthesizing global viewership data. It launched in Oct 2024 and has since reached over 600,000 followers within its first year."
             },
              {
                 "id": "5",
                 "dates": "October 2021 - January 2022",
-                "type": "Full Time",
-                "position": "Field volunteer at Nea Kavala Refugee Camp, Greece",
-                "bullets": "Coordinated a 10-member volunteer team delivering digital literacy and career workshops to 20 refugees to improve participants’ employability and access to online resources"
+                "location": "Polykastro, Greece",
+                "position": "Field volunteer",
+                "employer": "Nea Kavala Refugee Camp",
+                "bullets": "Coordinated a 10-member volunteer team delivering digital literacy and career workshops to 20 refugees to improve participants' employability and access to online resources"
             }
         ],
         "education": [ 
             { 
-                "universityName": "University of Amsterdam", 
-                "universityDate": "2022-2024", 
-                "universityPara": "Master of Science in Environmental Economics" 
+                "degree": "Master of Science in Environmental Economics",
+                "university": "University of Amsterdam", 
+                "dates": "September 2022 - August 2024",
+                "location": "Amsterdam, Netherlands"
             }, 
-                        { 
-                "universityName": "University of Oslo", 
-                "universityDate": "Spring 2021", 
-                "universityPara": "Semester study in Physics." 
+            { 
+                "degree": "Semester study in Physics",
+                "university": "University of Oslo", 
+                "dates": "Spring 2021",
+                "location": "Oslo, Norway"
             },
             { 
-                "universityName": "IE University (Spain)", 
-                "universityDate": "2016-2020", 
-                "universityPara": "Bachelor of Arts in International Relations" 
+                "degree": "Bachelor of Arts in International Relations",
+                "university": "IE University", 
+                "dates": "September 2016 - June 2020",
+                "location": "Madrid, Spain"
             }, 
             { 
-                "universityName": "Hong Kong University", 
-                "universityDate": "Fall 2019", 
-                "universityPara": "Exchange at the Faculty of Social Sciences" 
+                "degree": "Exchange at the Faculty of Social Sciences",
+                "university": "Hong Kong University", 
+                "dates": "Fall 2019",
+                "location": "Hong Kong SAR"
             } 
         ]
     },
     "skills": {
         "languages": [
-            "English",
-            "Norwegian",
-            "Spanish",
-            "French"
+            {
+                "language": "Norwegian",
+                "proficiency": "Native"
+            },
+            {
+                "language": "English",
+                "proficiency": "Native"
+            },
+            {
+                "language": "Spanish",
+                "proficiency": "Advanced"
+            },
+            {
+                "language": "French",
+                "proficiency": "Advanced"
+            },
+            {
+                "language": "Dutch",
+                "proficiency": "Intermediate"
+            }
         ],
        "others": [
             "Stata",
             "ArcGIS",
             "R"
+        ],
+        "interests": [
+            "Railway travelling",
+            "Barefoot running",
+            "Alpine skiing (ex-professional)"
         ]
     }
 }
