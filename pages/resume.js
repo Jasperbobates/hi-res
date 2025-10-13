@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Cursor from "../components/Cursor";
+// import Cursor from "../components/Cursor"; // Disabled - blocks all clicks
 import Header from "../components/Header";
 import ProjectResume from "../components/ProjectResume";
 import Socials from "../components/Socials";
-import Button from "../components/Button";
 import { useTheme } from "next-themes";
 // Data
-import { name, showResume } from "../data/portfolio.json";
-import { resume } from "../data/portfolio.json";
+import { name, showResume, resume, skills } from "../data/portfolio.json";
 import data from "../data/portfolio.json";
 
 const Resume = () => {
@@ -24,18 +22,8 @@ const Resume = () => {
   }, []);
   return (
     <>
-      {process.env.NODE_ENV === "development" && (
-        <div className="fixed bottom-6 right-6">
-          <Button onClick={() => router.push("/edit")} type={"primary"}>
-            Edit Resume
-          </Button>
-        </div>
-      )}
-      {data.showCursor && <Cursor />}
       <div
-        className={`container mx-auto mb-10 ${
-          data.showCursor && "cursor-none"
-        }`}
+        className={`container mx-auto mb-10`}
       >
         <Header isBlog />
         {mount && (
@@ -45,7 +33,7 @@ const Resume = () => {
                 mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
               } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
             >
-              <h1 className="text-3xl font-bold">{name}</h1>
+              <h1 className="text-3xl font-bold">Jasper Bonesmo Bates</h1>
               <h2 className="text-xl mt-5">{resume.tagline}</h2>
               <h2 className="w-4/5 text-xl mt-5 opacity-50">
                 {resume.description}
@@ -53,69 +41,94 @@ const Resume = () => {
               <div className="mt-2">
                 <Socials />
               </div>
-              <div className="mt-5">
+              <hr className="my-10 border-gray-300 dark:border-gray-600" />
+              <div className="mt-10">
                 <h1 className="text-2xl font-bold">Experience</h1>
 
                 {resume.experiences.map(
-                  ({ id, dates, type, position, bullets }) => (
+                  ({ id, dates, location, type, position, employer, bullets }) => (
                     <ProjectResume
                       key={id}
                       dates={dates}
+                      location={location}
                       type={type}
                       position={position}
+                      employer={employer}
                       bullets={bullets}
                     ></ProjectResume>
                   )
                 )}
               </div>
-              <div className="mt-5">
+              <hr className="my-10 border-gray-300 dark:border-gray-600" />
+              <div className="mt-10">
                 <h1 className="text-2xl font-bold">Education</h1>
-                <div className="mt-2">
-                  <h2 className="text-lg">{resume.education.universityName}</h2>
-                  <h3 className="text-sm opacity-75">
-                    {resume.education.universityDate}
-                  </h3>
-                  <p className="text-sm mt-2 opacity-50">
-                    {resume.education.universityPara}
-                  </p>
-                </div>
+                {resume.education.map((edu, index) => (
+                  <div key={index} className="mt-5 w-full flex mob:flex-col desktop:flex-row justify-between">
+                    <div className="text-lg w-2/5">
+                      <h2>{edu.dates}</h2>
+                      {edu.location && (
+                        <p className="text-sm opacity-40 mt-1">{edu.location}</p>
+                      )}
+                    </div>
+                    <div className="w-3/5">
+                      <h2 className="text-lg font-bold">{edu.degree}</h2>
+                      <p className="text-base mt-1 opacity-50">
+                        {edu.university}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="mt-5">
-                <h1 className="text-2xl font-bold">Skills</h1>
-                <div className="flex mob:flex-col desktop:flex-row justify-between">
-                  {resume.languages && (
-                    <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Languages</h2>
-                      <ul className="list-disc">
-                        {resume.languages.map((language, index) => (
-                          <li key={index} className="ml-5 py-2">
-                            {language}
-                          </li>
-                        ))}
+              <hr className="my-10 border-gray-300 dark:border-gray-600" />
+              <div className="mt-10">
+                <div className="flex mob:flex-col desktop:flex-row justify-start gap-20">
+                  {skills.languages && (
+                    <div className="mob:mt-5">
+                      <h1 className="text-2xl font-bold">Languages</h1>
+                      <ul className="list-disc mt-2">
+                        {(() => {
+                          // Group languages by proficiency
+                          const grouped = {};
+                          skills.languages.forEach(lang => {
+                            if (typeof lang === 'string') {
+                              if (!grouped['Other']) grouped['Other'] = [];
+                              grouped['Other'].push(lang);
+                            } else {
+                              if (!grouped[lang.proficiency]) grouped[lang.proficiency] = [];
+                              grouped[lang.proficiency].push(lang.language);
+                            }
+                          });
+                          // Render grouped languages
+                          return Object.entries(grouped).map(([proficiency, languages], index) => (
+                            <li key={index} className="ml-5 py-2">
+                              <span className="font-semibold">{proficiency}:</span> {languages.join(', ')}
+                            </li>
+                          ));
+                        })()}
                       </ul>
                     </div>
                   )}
 
-                  {resume.frameworks && (
-                    <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Frameworks</h2>
-                      <ul className="list-disc">
-                        {resume.frameworks.map((framework, index) => (
-                          <li key={index} className="ml-5 py-2">
-                            {framework}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {resume.others && (
-                    <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Others</h2>
-                      <ul className="list-disc">
-                        {resume.others.map((other, index) => (
+                  {skills.others && (
+                    <div className="mob:mt-5">
+                      <h1 className="text-2xl font-bold">Digital skills</h1>
+                      <ul className="list-disc mt-2">
+                        {skills.others.map((other, index) => (
                           <li key={index} className="ml-5 py-2">
                             {other}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {skills.interests && (
+                    <div className="mob:mt-5">
+                      <h1 className="text-2xl font-bold">Interests</h1>
+                      <ul className="list-disc mt-2">
+                        {skills.interests.map((interest, index) => (
+                          <li key={index} className="ml-5 py-2">
+                            {interest}
                           </li>
                         ))}
                       </ul>

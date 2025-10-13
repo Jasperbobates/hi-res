@@ -2,48 +2,48 @@ import { Popover } from "@headlessui/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Button from "../Button";
-// Local Data
+import Link from "next/link";
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   return (
     <>
+      {/* --- MOBILE MENU --- */}
       <Popover className="block tablet:hidden mt-5">
         {({ open }) => (
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
+                className="font-medium p-2 laptop:p-0 link cursor-pointer"
               >
                 {name}.
               </h1>
 
               <div className="flex items-center">
                 {data.darkMode && (
-                  <Button
+                  <button
                     onClick={() =>
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
+                    className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100"
                   >
                     <img
                       className="h-6"
                       src={`/images/${
                         theme === "dark" ? "moon.svg" : "sun.svg"
                       }`}
-                    ></img>
-                  </Button>
+                      alt="theme toggle"
+                    />
+                  </button>
                 )}
 
                 <Popover.Button>
@@ -58,10 +58,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                         ? "cancel.svg"
                         : "cancel-white.svg"
                     }`}
-                  ></img>
+                    alt="menu toggle"
+                  />
                 </Popover.Button>
               </div>
             </div>
+
             <Popover.Panel
               className={`absolute right-0 z-10 w-11/12 p-4 ${
                 theme === "dark" ? "bg-slate-800" : "bg-white"
@@ -69,59 +71,68 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             >
               {!isBlog ? (
                 <div className="grid grid-cols-1">
-                  <Button onClick={handleWorkScroll}>Work</Button>
-                  <Button onClick={handleAboutScroll}>About</Button>
+                  <button onClick={handleWorkScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                    Work
+                  </button>
+                  <button onClick={handleAboutScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                    About
+                  </button>
                   {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
+                    <Link href="/blog">
+                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                        Blog
+                      </a>
+                    </Link>
                   )}
                   {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
-                      }
-                    >
-                      Resume
-                    </Button>
+                    <Link href="/resume">
+                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                        Resume
+                      </a>
+                    </Link>
                   )}
-
-                  <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
-                  >
+                  <button onClick={handleContactScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
                     Contact
-                  </Button>
+                  </button>
                 </div>
               ) : (
                 <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push("/")} classes="first:ml-1">
-                    Home
-                  </Button>
+                  <Link href="/">
+                    <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                      Home
+                    </a>
+                  </Link>
                   {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
+                    <Link href="/blog">
+                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                        Blog
+                      </a>
+                    </Link>
                   )}
                   {showResume && (
-                    <Button
-                      onClick={() => router.push("/resume")}
-                      classes="first:ml-1"
-                    >
-                      Resume
-                    </Button>
+                    <Link href="/resume">
+                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                        Resume
+                      </a>
+                    </Link>
                   )}
-
-                  <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
-                  >
-                    Contact
-                  </Button>
+                  <Link href="/#contact">
+                    <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                      Contact
+                    </a>
+                  </Link>
                 </div>
               )}
             </Popover.Panel>
           </>
         )}
       </Popover>
+
+      {/* --- DESKTOP HEADER --- */}
       <div
-      className={`mt-0 hidden flex-row items-center justify-between fixed top-0 left-0 w-full ${
-        theme === "light" && "bg-white"
-      } dark:text-white z-50 tablet:flex`}
+        className={`mt-10 mb-10 hidden flex-row items-center justify-between p-4 ${
+          theme === "light" && "bg-white"
+        } dark:text-white tablet:flex`}
       >
         <h1
           onClick={() => router.push("/")}
@@ -129,64 +140,86 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         >
           {name}.
         </h1>
+
         {!isBlog ? (
-          <div className="flex">
-            <Button onClick={handleWorkScroll}>Work</Button>
-            <Button onClick={handleAboutScroll}>About</Button>
+          <div className="flex items-center gap-2">
+            <button onClick={handleWorkScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+              Work
+            </button>
+            <button onClick={handleAboutScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+              About
+            </button>
+
             {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
-            )}
-            {showResume && (
-              <Button
-                onClick={() => router.push("/resume")}
-                classes="first:ml-1"
-              >
-                Resume
-              </Button>
+              <Link href="/blog">
+                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+                  Blog
+                </a>
+              </Link>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            {showResume && (
+              <Link href="/resume">
+                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+                  Resume
+                </a>
+              </Link>
+            )}
+
+            <button onClick={handleContactScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
               Contact
-            </Button>
+            </button>
+
             {mounted && theme && data.darkMode && (
-              <Button
+              <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0"
               >
                 <img
                   className="h-6"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
+                  alt="toggle theme"
+                />
+              </button>
             )}
           </div>
         ) : (
-          <div className="flex">
-            <Button onClick={() => router.push("/")}>Home</Button>
+          <div className="flex items-center gap-2">
+            <Link href="/">
+              <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+                Home
+              </a>
+            </Link>
             {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
+              <Link href="/blog">
+                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+                  Blog
+                </a>
+              </Link>
             )}
             {showResume && (
-              <Button
-                onClick={() => router.push("/resume")}
-                classes="first:ml-1"
-              >
-                Resume
-              </Button>
+              <Link href="/resume">
+                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+                  Resume
+                </a>
+              </Link>
             )}
-
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
-              Contact
-            </Button>
-
+            <Link href="/#contact">
+              <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+                Contact
+              </a>
+            </Link>
             {mounted && theme && data.darkMode && (
-              <Button
+              <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0"
               >
                 <img
                   className="h-6"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
+                  alt="toggle theme"
+                />
+              </button>
             )}
           </div>
         )}
