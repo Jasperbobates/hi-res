@@ -20,7 +20,7 @@ image: >-
 
 <figure class="float-left">
   <figcaption class="title">ELECTRIFICATION STATUS OF THE NORWEGIAN <br /> CONTINENTAL SHELF</figcaption>
-  <img src="/images/blog_pics/Electrification_process.PNG" alt="Electrification process" class="tall">
+  <img src="/images/blog_pics/Electrification_process.png" alt="Electrification process" class="tall">
   <figcaption class="italic"> Source: The Norwegian Offshore Directorate </figcaption>
 </figure>
 

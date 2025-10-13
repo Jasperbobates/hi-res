@@ -4,7 +4,7 @@ title: Where to grow my beans?
 tagline: Identifying optimal zones for coffee bean plantations on Hawaiʻi island
 preview: >-
   A geospatial analysis to identify the most suitable locations for coffee plantations on Hawaiʻi island.
-image: /images/capture.PNG
+image: /images/Capture.PNG
 ---
 
 ### Project Background

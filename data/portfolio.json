@@ -29,14 +29,14 @@
             "id": "1",
             "title": "To drill or not to drill?",
             "description": "A spatial analysis of oil drilling in Indonesia",
-            "imageSrc": "/images/Map.PNG",
+            "imageSrc": "/images/Map.png",
             "slug": "indonesia-oil-drilling"
         },
         {
             "id": "2",
             "title": "Where to grow my beans?",
             "description": "Identifying optimal zones for coffee bean plantations on Hawaiʻi island",
-            "imageSrc": "/images/capture.PNG",
+            "imageSrc": "/images/Capture.PNG",
             "slug": "hawaii-coffee-plantations"
         },
         {
@@ -57,7 +57,7 @@
             "id": "5",
             "title": "Take some time off fathers ",
             "description": "Monitoring the change in take-up of paternity leave following a Dutch parental leave reform",
-            "imageSrc": "/images/AGV_takeup.svg",
+            "imageSrc": "/images/agv_takeup.svg",
             "slug": "paternity-leave-reform"
         }
     ],

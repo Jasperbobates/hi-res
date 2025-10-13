@@ -4,7 +4,7 @@ title: Take some time off fathers
 tagline: Monitoring the change in take-up of paternity leave following a Dutch parental leave reform
 preview: >-
   An empirical study tracking the impact of Dutch parental leave reforms on paternity leave uptake rates and gender equality outcomes.
-image: /images/AGV_takeup.svg
+image: /images/agv_takeup.svg
 ---
 
 ### Project Overview
