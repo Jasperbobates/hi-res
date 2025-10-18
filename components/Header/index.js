@@ -14,50 +14,37 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
   const { name, showBlog, showResume } = data;
 
   // Handle work and about navigation from other pages
-  const handleWorkNavigation = () => {
+  const handleWorkNavigation = (closeMenu) => {
     if (handleWorkScroll) {
       handleWorkScroll();
     } else {
       router.push('/#work');
     }
+    if (closeMenu) closeMenu();
   };
 
-  const handleAboutNavigation = () => {
+  const handleAboutNavigation = (closeMenu) => {
     if (handleAboutScroll) {
       handleAboutScroll();
     } else {
       router.push('/#about');
     }
+    if (closeMenu) closeMenu();
+  };
+
+  // Handle contact navigation
+  const handleContactNavigation = (closeMenu) => {
+    router.push('/#contact');
+    if (closeMenu) closeMenu();
   };
 
   useEffect(() => setMounted(true), []);
-
-  const handleFooterScroll = () => {
-    console.log('Contact button clicked - attempting to scroll to footer');
-    
-    // Try multiple selectors to find the footer
-    const footer = document.querySelector('footer') || 
-                  document.querySelector('.mt-5.laptop\\:mt-40') ||
-                  document.querySelector('[class*="mt-5"]') ||
-                  document.querySelector('div:last-child');
-    
-    console.log('Footer element found:', footer);
-    
-    if (footer) {
-      console.log('Scrolling to footer element');
-      footer.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.log('No footer found, scrolling to bottom of page');
-      // Fallback: scroll to bottom of page
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
       {/* --- MOBILE MENU --- */}
       <Popover className="block tablet:hidden mt-5">
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <h1
@@ -111,16 +98,16 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
             >
               {!isBlog ? (
                 <div className="grid grid-cols-1 gap-3">
-                  <Button onClick={handleWorkNavigation}>
+                  <Button onClick={() => handleWorkNavigation(close)}>
                     Work
                   </Button>
-                  <Button onClick={handleAboutNavigation}>
+                  <Button onClick={() => handleAboutNavigation(close)}>
                     About
                   </Button>
                   {showBlog && (
                     <Link href="/blog">
                       <a>
-                        <Button>
+                        <Button onClick={close}>
                           Blog
                         </Button>
                       </a>
@@ -129,13 +116,13 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   {showResume && (
                     <Link href="/resume">
                       <a>
-                        <Button>
+                        <Button onClick={close}>
                           Resume
                         </Button>
                       </a>
                     </Link>
                   )}
-                  <Button onClick={handleContactScroll}>
+                  <Button onClick={() => handleContactNavigation(close)}>
                     Contact
                   </Button>
                 </div>
@@ -143,21 +130,21 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 <div className="grid grid-cols-1 gap-3">
                   <Link href="/">
                     <a>
-                      <Button>
+                      <Button onClick={close}>
                         Home
                       </Button>
                     </a>
                   </Link>
-                  <Button onClick={handleWorkNavigation}>
+                  <Button onClick={() => handleWorkNavigation(close)}>
                     Work
                   </Button>
-                  <Button onClick={handleAboutNavigation}>
+                  <Button onClick={() => handleAboutNavigation(close)}>
                     About
                   </Button>
                   {showBlog && (
                     <Link href="/blog">
                       <a>
-                        <Button>
+                        <Button onClick={close}>
                           Blog
                         </Button>
                       </a>
@@ -166,25 +153,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   {showResume && (
                     <Link href="/resume">
                       <a>
-                        <Button>
+                        <Button onClick={close}>
                           Resume
                         </Button>
                       </a>
                     </Link>
                   )}
-                  {isResume ? (
-                    <Link href="/#contact">
-                      <a>
-                        <Button>
-                          Contact
-                        </Button>
-                      </a>
-                    </Link>
-                  ) : (
-                    <Button onClick={handleContactScroll || handleFooterScroll}>
-                      Contact
-                    </Button>
-                  )}
+                  <Button onClick={() => handleContactNavigation(close)}>
+                    Contact
+                  </Button>
                 </div>
               )}
             </Popover.Panel>
@@ -207,10 +184,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
 
         {!isBlog ? (
           <div className="flex items-center gap-3">
-            <Button onClick={handleWorkNavigation}>
+            <Button onClick={() => handleWorkNavigation()}>
               Work
             </Button>
-            <Button onClick={handleAboutNavigation}>
+            <Button onClick={() => handleAboutNavigation()}>
               About
             </Button>
 
@@ -234,7 +211,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               </Link>
             )}
 
-            <Button onClick={handleContactScroll}>
+            <Button onClick={() => handleContactNavigation()}>
               Contact
             </Button>
 
@@ -260,10 +237,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 </Button>
               </a>
             </Link>
-            <Button onClick={handleWorkNavigation}>
+            <Button onClick={() => handleWorkNavigation()}>
               Work
             </Button>
-            <Button onClick={handleAboutNavigation}>
+            <Button onClick={() => handleAboutNavigation()}>
               About
             </Button>
             {showBlog && (
@@ -284,19 +261,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 </a>
               </Link>
             )}
-            {isResume ? (
-              <Link href="/#contact">
-                <a>
-                  <Button>
-                    Contact
-                  </Button>
-                </a>
-              </Link>
-            ) : (
-              <Button onClick={handleContactScroll || handleFooterScroll}>
-                Contact
-              </Button>
-            )}
+            <Button onClick={() => handleContactNavigation()}>
+              Contact
+            </Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

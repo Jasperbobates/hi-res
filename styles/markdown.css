@@ -9,22 +9,22 @@
 /* Headings */
 
 .markdown-class h1 {
-  @apply mt-12 mb-1 text-3xl;
+  @apply mt-12 mb-4 text-4xl font-bold;
 }
 .markdown-class h2 {
-  @apply mt-10 mb-1 text-2xl;
+  @apply mt-10 mb-3 text-3xl font-semibold;
 }
 .markdown-class h3 {
-  @apply mt-8 mb-1 text-xl;
+  @apply mt-8 mb-2 text-2xl font-semibold;
 }
 .markdown-class h4 {
-  @apply mt-6 mb-1 text-lg;
+  @apply mt-6 mb-2 text-xl font-medium;
 }
 .markdown-class h5 {
-  @apply mt-4 mb-1 text-base;
+  @apply mt-4 mb-1 text-lg font-medium;
 }
 .markdown-class h6 {
-  @apply mt-4 mb-1 text-sm;
+  @apply mt-4 mb-1 text-base font-medium;
 }
 
 .markdown-class a {

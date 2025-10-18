@@ -15,24 +15,24 @@ link:
   type: "Policy Brief (Dutch Only)"
 ---
 
-## Project Overview
+### Project Overview
 
 Government efficiency has become a hot topic in contemporary politics, and for good reasons. With many governments suffering from high public debt, there is increased scrutiny on public expenditure. However, there is less discussion about how to ensure that what is spent is done so efficiently. That is what my team of researchers and I explored in a 2024 policy brief by the Netherlands Bureau for Economic Policy Analysis (CPB). By assessing the quality of the identification strategies used in the literature, I compiled empirical evidence from across the world to assess the potential efficiency of 4 types of public financial investment instruments (subsidies, loans, credit guarantees, and public venture capital). 
 
-## Research Questions
+### Research Questions
 
 - What are the market failures that contribute to underinvestment?
 - What financing instrument can address which market failure?
 - How should the financing scheme be designed to maximize the return on investment (additionality)?
 
-## Methodology
+### Methodology
 
 The study employed:
 
 - Literature reviews
 - Comparative policy analysis
 
-## Key Findings
+### Key Findings
 
 **Subsidy schemes** have proven effective in accelerating innovation amongst small and medium-sized businesses. They also help to mitigate the occurrence of above equilibrium-level interest rates by lenders (credit rationing). 
 
@@ -42,7 +42,8 @@ The study employed:
 
 **Public venture capital** is gaining increased interest in fiscal policy. It allows governments to directly pick winners by investing in businesses that have potential for wider societal benefits that are unaccounted for in the market. However, the literature is clear that more government intervention tends to hamper innovation rather than accelerating it. It may, however, be an effective response if the reasons for underinvestment are related to credit rationing or economic downturns.
 
-## Impact
+### Impact
 
 The findings were presented to senior directors at the CPB and contributed to ongoing discussions on public financing strategies.
 
+<div class="mt-12"></div>

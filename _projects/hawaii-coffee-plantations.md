@@ -7,7 +7,7 @@ preview: >-
 image: https://upload.wikimedia.org/wikipedia/commons/9/97/Coffee_plantation%2C_Kaua%CA%BBi_58.jpg
 ---
 
-## Project Background
+### Project Background
 
 According to Munsart (1997):
 > Living *near* a potentially destructive volcano can provide a certain, usually unwelcome, sense of adventure. Living *on* an active volcano can make one’s day-to-day existence precarious to say the least. Yet millions of Americans do both (...) Like many geologic agents considered destructive, however, volcanic eruptions have a positive side: New materials added to the earth’s surface by eruption created the fertile soils that attracted inhabitants to the area in the first place. For instance, such soils, combined with local weather characteristics, allow the area around Kona, Hawaii, to produce the only coffee in the fifty states.
@@ -45,15 +45,19 @@ I combined these conditions using the suitability modeler to identify two suitab
 
 
 <figure class="center">
-  <img src="/images/Project_pics/Suitability.png" alt="Coffee plantation analysis results" class="center" style="width: 600px; height: auto;" />
+  <img src="/images/project_pics/Suitability.png" alt="Coffee plantation analysis results" class="center" style="width: 600px; height: auto;" />
 </figure>
 
-## References
+### References
 - [Munsart, C. (1997). American history through earth science. Bloomsbury Publishing USA.](https://books.google.no/books?hl=fr&lr=&id=COXEEAAAQBAJ&oi=fnd&pg=PR5&dq=craig+a+munsart+american+history+through+earth+sciences&ots=s9r7eAGKCI&sig=6_--a-t5T4uonxxxw4exhy8xJC4&redir_esc=y#v=onepage&q=craig%20a%20munsart%20american%20history%20through%20earth+sciences&f=false)
 - [Smith, V. E., & Bittenbender, H. C. (2008). Growing coffee in Hawaii.](https://scholarspace.manoa.hawaii.edu/items/d9ce8f1f-6420-44a0-9b0d-0310d20c9fb2)
 - [Britannica, T. Editors of Encyclopaedia. (2023, October 20). Coffee. Encyclopedia Britannica.](https://www.britannica.com/topic/coffee)
 
-## Image Attribution
-- Coffee plantation image: By [Lukas](https://www.flickr.com/people/86265563@N00) from Tokyo, Japan - [Original source](https://www.flickr.com/photos/86265563@N00/2929733036/), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=5465016)
+<div class="mt-12"></div>
+
+---
+
+###### Image Attribution
+  - <span class="text-xs text-gray-500">Coffee plantation image: By [Lukas](https://www.flickr.com/people/86265563@N00) from Tokyo, Japan - [Original source](https://www.flickr.com/photos/86265563@N00/2929733036/), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=5465016)
 
 ---
