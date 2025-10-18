@@ -7,11 +7,11 @@ preview: >-
 image: https://upload.wikimedia.org/wikipedia/commons/2/2d/Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg
 ---
 
-## Project Background
+### Project Background
 
 In the 1990s, the Netherlands introduced a Nature Policy Plan (*Natuurbeleidsplan*) to address the increasing fragmentation of wildlife areas caused by intensive infrastructure developments over the past century. With the aim of reconnecting different wildlife areas through a national ecological network, the policy most notably resulted in the 800 meter long natural bridge in the Gooi region. However, more such ecoducts are needed to support the ecological network, the project has become subject to significant postponements. In this project I developed a model to predict optimal wildlife corridor locations using ArcGIS to connect the isolated wildlife areas in the Gooi.  
 
-## Analysis Approach
+### Analysis Approach
 
 
 Two main variables are considered for this model:
@@ -38,8 +38,12 @@ These variables are combined to create a friction surface which measures the dif
 
 The analysis identified several high-priority locations for ecoduct placement, balancing ecological needs with infrastructure constraints and budget considerations.
 
-## Image Attribution
-- Project header image: [Sillerkiil](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg)
+<div class="mt-8"></div>
+
+---
+
+###### Image Attribution
+  - <span class="text-xs text-gray-500">Project header image: [Sillerkiil](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg)</span>
 
 ---
 
