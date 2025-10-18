@@ -33,10 +33,12 @@ const Blog = ({ posts }) => {
         <Head>
           <title>Blog</title>
         </Head>
+        <div className="gradient-circle"></div>
+        <div className="gradient-circle-bottom"></div>
         <div
-          className={`container mx-auto mb-10`}
+          className={`container mx-auto mb-10 px-4 mob:px-4 desktop:px-8`}
         >
-          <Header isBlog={true}></Header>
+          <Header isBlog={true} isResume={false}></Header>
           <div className="mt-10">
             <h1
               ref={text}
@@ -55,6 +57,7 @@ const Blog = ({ posts }) => {
                     <div className="relative rounded-lg overflow-hidden">
                       <img
                         className="w-full h-60 rounded-lg shadow-lg object-cover hover:scale-110 transition-all ease-out duration-300"
+                        style={{ objectPosition: post.slug === 'firstblog' ? 'left center' : 'center' }}
                         src={post.image}
                         alt={post.title}
                       ></img>

@@ -1,15 +1,14 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Router from "next/router";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
+import markdownToHtml from "../utils/markdownToHtml";
 import Footer from "../components/Footer";
 import Head from "next/head";
-import Button from "../components/Button";
-import Link from "next/link";
-// import Cursor from "../components/Cursor"; // Disabled - blocks all clicks
+// Removed unused imports: Button, Link, Cursor
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -24,30 +23,43 @@ export default function Home() {
   const textThree = useRef();
   const textFour = useRef();
 
-  // Handling Scroll
-  const handleWorkScroll = () => {
-    window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
+  // State for markdown content
+  const [aboutContent, setAboutContent] = useState("");
 
-  const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
+  // Process markdown content
+  useEffect(() => {
+    const processMarkdown = async () => {
+      const htmlContent = await markdownToHtml(data.aboutpara);
+      setAboutContent(htmlContent);
+    };
+    processMarkdown();
+  }, []);
 
-  const handleContactScroll = () => {
-    window.scrollTo({
-      top: contactRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
+  // Handle hash navigation
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      const hash = window.location.hash;
+      if (hash === '#work' && workRef.current) {
+        workRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (hash === '#about' && aboutRef.current) {
+        aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (hash === '#contact' && contactRef.current) {
+        contactRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    // Handle initial hash
+    handleHashNavigation();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashNavigation);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation);
+    };
+  }, []);
+
+  // Scroll handling is now done via hash navigation above
 
   useIsomorphicLayoutEffect(() => {
     stagger(
@@ -67,12 +79,8 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
-        <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-          handleContactScroll={handleContactScroll}
-        />
+      <div className="container mx-auto mb-10 px-4 mob:px-4 desktop:px-8">
+        <Header />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
             <h1
@@ -102,25 +110,73 @@ export default function Home() {
           </div>
 
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+        <div id="work" className="mt-10 laptop:mt-30" ref={workRef}>
           <h1 className="text-2xl text-bold">Work.</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                onClick={() => Router.push(`/projects/${project.slug}`)}
-              />
-            ))}
+            {data.projects.map((project) => {
+              // Define background colors for specific projects
+              const getBackgroundColor = (slug) => {
+                switch (slug) {
+                  case 'hawaii-coffee-plantations':
+                    return '#C9ECFF';
+                  case 'public-investments':
+                    return '#E8EFFF';
+                  case 'paternity-leave-reform':
+                    return '#F3F3F3';
+                  default:
+                    return '#ffffff';
+                }
+              };
+
+              // Define object positioning for specific projects
+              const getObjectPosition = (slug) => {
+                switch (slug) {
+                  case 'indonesia-oil-drilling':
+                    return 'center';
+                  default:
+                    return 'center';
+                }
+              };
+
+              // Define aspect ratio for specific projects
+              const getAspectRatio = (slug) => {
+                switch (slug) {
+                  case 'public-investments':
+                    return '1046/529';
+                  default:
+                    return 'auto';
+                }
+              };
+
+              return (
+                <WorkCard
+                  key={project.id}
+                  img={project.imageSrc}
+                  name={project.title}
+                  description={project.description}
+                  onClick={() => Router.push(`/projects/${project.slug}`)}
+                  backgroundColor={getBackgroundColor(project.slug)}
+                  objectPosition={getObjectPosition(project.slug)}
+                  aspectRatio={getAspectRatio(project.slug)}
+                />
+              );
+            })}
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">The Hi-Res Vision.</h1>
-          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+        <div id="about" className="mt-10 laptop:mt-40" ref={aboutRef}>
+          <h1 className="text-2xl text-bold">About.</h1>
+          <div className="mt-5">
+            <div 
+              className="text-lg laptop:text-2xl w-full laptop:w-3/5 ml-2 laptop:ml-4"
+              dangerouslySetInnerHTML={{ __html: aboutContent }}
+            />
+          </div>
+        </div>
+        <div className="mt-10 laptop:mt-40">
+          <h1 className="text-2xl text-bold">The Hi-Res Vision.</h1>
+          <div className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -129,12 +185,6 @@ export default function Home() {
               />
             ))}
           </div>
-        </div>
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
         </div>
         <div id="contact" ref={contactRef}>
           <Footer />

@@ -9,22 +9,22 @@
 /* Headings */
 
 .markdown-class h1 {
-  @apply mt-5 text-3xl;
+  @apply mt-12 mb-1 text-3xl;
 }
 .markdown-class h2 {
-  @apply mt-5 text-2xl;
+  @apply mt-10 mb-1 text-2xl;
 }
 .markdown-class h3 {
-  @apply mt-5 text-xl;
+  @apply mt-8 mb-1 text-xl;
 }
 .markdown-class h4 {
-  @apply mt-5 text-lg;
+  @apply mt-6 mb-1 text-lg;
 }
 .markdown-class h5 {
-  @apply mt-5 text-base;
+  @apply mt-4 mb-1 text-base;
 }
 .markdown-class h6 {
-  @apply mt-5 text-sm;
+  @apply mt-4 mb-1 text-sm;
 }
 
 .markdown-class a {
@@ -32,7 +32,16 @@
 }
 
 .markdown-class p {
-  @apply mt-2 opacity-80 leading-7 font-normal text-base;
+  @apply mt-6 opacity-95 leading-8 font-normal text-lg;
+}
+
+.markdown-class h1 + p,
+.markdown-class h2 + p,
+.markdown-class h3 + p,
+.markdown-class h4 + p,
+.markdown-class h5 + p,
+.markdown-class h6 + p {
+  @apply mt-2;
 }
 
 .markdown-class strong {
@@ -48,7 +57,7 @@
 /* Markdown Lists */
 
 .markdown-class ol {
-  @apply mt-5 ml-5;
+  @apply mt-2 mb-4 ml-5;
 }
 
 .markdown-class ol li {
@@ -56,7 +65,7 @@
 }
 
 .markdown-class ul {
-  @apply mt-5 ml-5;
+  @apply mt-2 mb-4 ml-5;
 }
 
 .markdown-class ul li {
@@ -66,11 +75,13 @@
 /* BlockQuote */
 
 .markdown-class blockquote {
-  @apply p-5 border-l-8 rounded-lg shadow-lg  text-sm bg-slate-200 text-black;
+  @apply my-4 mx-8 text-gray-700 dark:text-gray-300 text-sm;
+  font-style: italic;
 }
 
 .markdown-class blockquote p {
-  @apply text-black text-sm;
+  @apply text-gray-700 dark:text-gray-300 text-sm;
+  font-style: italic;
 }
 
 /* Figures */
@@ -87,6 +98,16 @@
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+
+/* Mobile responsive overrides for float-left figures */
+@media (max-width: 767px) {
+  .markdown-class figure.float-left {
+    float: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
 }
 
 .markdown-class figure.center {
@@ -120,11 +141,22 @@
   width: 450px;
 }
 
+/* Mobile responsive overrides for tall images */
+@media (max-width: 767px) {
+  .markdown-class img.tall {
+    width: 100% !important;
+    height: auto !important;
+    float: none !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
 .markdown-class img.collage {
   @apply mx-auto rounded-xl shadow-lg;
   float: none;
-  width: 600px;
-  height: 600px;
+  width: 550px;
+  height: 550px;
 }
 
 .markdown-class img.right {
@@ -170,4 +202,106 @@
 .markdown-class figcaption.title {
   @apply text-xl font-semibold mb-1 text-center;
   color: #b0b1b4; /* gray-900 */
+}
+
+/* Mobile responsive overrides for title captions */
+@media (max-width: 767px) {
+  .markdown-class figcaption.title {
+    font-size: 0.875rem !important; /* text-sm */
+    line-height: 1.25rem !important;
+  }
+}
+
+/* Mobile responsive overrides for GNH image */
+@media (max-width: 767px) {
+  .markdown-class img[alt="GNH"]:not([class*="collage"]) {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
+
+/* Constrained caption for collage images */
+.markdown-class figcaption.constrained {
+  max-width: 550px;
+  width: 550px;
+  margin: 0 auto;
+  display: block;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .markdown-class figcaption.constrained {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Mobile responsive overrides for Jonas Anders image */
+@media (max-width: 767px) {
+  .markdown-class figure.float-right {
+    float: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .markdown-class figure.float-right img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .markdown-class figure.float-right figcaption {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+}
+
+/* Mobile responsive overrides for paternal leave images */
+@media (max-width: 767px) {
+  .markdown-class .paternal-leave-grid {
+    flex-direction: column !important;
+  }
+  
+  .markdown-class .paternal-leave-grid > div {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .markdown-class .paternal-leave-grid img {
+    object-fit: contain !important;
+    object-position: center !important;
+    height: 187px !important;
+  }
+}
+
+/* Mobile responsive overrides for coffee project 4x1 grid */
+@media (max-width: 767px) {
+  .markdown-class div[style*="display: flex"][style*="gap: 0.5rem"][style*="margin-top: 1rem"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+  
+  .markdown-class div[style*="display: flex"][style*="gap: 0.5rem"][style*="margin-top: 1rem"] > div {
+    flex: none !important;
+  }
+}
+
+/* Mobile responsive overrides for ecoduct images */
+@media (max-width: 767px) {
+  .markdown-class .ecoduct-images {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
 }

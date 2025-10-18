@@ -1,45 +1,59 @@
 ---
-date: '2024-03-01T10:00:00.000Z'
+date: '2025-08-01T10:00:00.000Z'
 title: Take some time off fathers
 tagline: Monitoring the change in take-up of paternity leave following a Dutch parental leave reform
 preview: >-
   An empirical study tracking the impact of Dutch parental leave reforms on paternity leave uptake rates and gender equality outcomes.
-image: /images/agv_takeup.svg
+collaborators:
+  - name: "Employee Insurance Agency"
+    logo: "/images/Logos/UWV_logo1.png"
+    website: "https://www.uwv.nl"
+  - name: "Statistics Netherlands"
+    logo: "/images/Logos/cbs_logo.svg"
+    website: "https://www.cbs.nl"
+  - name: "University of Amsterdam School of Economics"
+    logo: "/images/Logos/UvA_ASE_logo.jpg"
+    website: "https://www.uva.nl"
 ---
 
-### Project Overview
+## Policy context
 
-This research project examines how recent reforms to Dutch parental leave policies have affected fathers' uptake of paternity leave and broader gender equality outcomes.
+In June 2020, a new Dutch paternity leave reform was instituted. The extended paternal leave policy (AGV), provides fathers with five additional weeks of paid leave in addition to the one-week standard leave. Fathers can choose if and when they want to take this leave within a six-month period. They are provided 70% of their base salary through the benefit scheme and employers are given the option to top up the remainder.
 
-### Policy Context
+## Project overview
 
-The Netherlands recently reformed its parental leave system to encourage more equitable sharing of childcare responsibilities between parents. This study tracks the real-world impact of these changes.
+Our research team received registration data from the Employee Insurance Agency (UWV) and labor data from the Central Statistical Bureau of the Netherlands (CBS). I prepared the statistical analysis by merging the two datasets and creating easy-to-use replication files for the research team.
 
-### Research Methodology
+## Research Methodology
 
 The study employed:
-- Longitudinal data analysis from household surveys
-- Statistical modeling of take-up rates
-- Comparative analysis before and after reform
-- Qualitative interviews with families
+- **Longitudinal data analysis** 
+- **Regression discontinuity design** around the cutoff date 
 
-### Key Findings
+## Preliminary Findings
 
-The research revealed significant changes in paternity leave uptake following the reform, with important implications for:
-- Gender equality in the workplace
-- Child development outcomes
-- Work-life balance
-- Economic productivity
+- **Networking effects**: A father taking additional leave increases the likelihood of their colleagues taking it as well.
+- **Seasonal variations**: Take-up rates are lower during summer seasons and higher during winter seasons.
+- **Heterogeneity**: Large heterogeneity in take-up across income deciles, ethnic background, contract type, and age of the father.
 
-### Data Visualization
-
-Custom visualizations were created to communicate findings effectively to policy makers and the public, showing clear trends in take-up rates across different demographic groups.
-
-### Policy Implications
-
-The findings provide evidence-based insights for future policy refinements and have contributed to ongoing discussions about family leave policies in the Netherlands and beyond.
-
----
-
-
-
+<div class="paternal-leave-grid" style="display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;">
+  <div style="flex: 0 0 45%; max-width: 45%;">
+    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Age Distribution</h4>
+    <img src="/images/project_pics/Age.svg" alt="Paternity Leave Take-up by Age" style="width: 100%; height: 320px;" />
+  </div>
+  
+  <div style="flex: 0 0 45%; max-width: 45%;">
+    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Ethnic Background</h4>
+    <img src="/images/project_pics/Ethnicity.svg" alt="Paternity Leave Take-up by Ethnicity" style="width: 100%; height: 320px;" />
+  </div>
+  
+  <div style="flex: 0 0 45%; max-width: 45%;">
+    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Income Decile</h4>
+    <img src="/images/project_pics/Income_decile.svg" alt="Paternity Leave Take-up by Income Decile" style="width: 100%; height: 320px;" />
+  </div>
+  
+  <div style="flex: 0 0 45%; max-width: 45%;">
+    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Firm Size</h4>
+    <img src="/images/project_pics/Firm_size.svg" alt="Paternity Leave Take-up by Firm Size" style="width: 100%; height: 320px;" />
+  </div>
+</div>

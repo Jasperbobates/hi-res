@@ -3,16 +3,55 @@ import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Button from "../Button";
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog, isResume }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
 
+  // Handle work and about navigation from other pages
+  const handleWorkNavigation = () => {
+    if (handleWorkScroll) {
+      handleWorkScroll();
+    } else {
+      router.push('/#work');
+    }
+  };
+
+  const handleAboutNavigation = () => {
+    if (handleAboutScroll) {
+      handleAboutScroll();
+    } else {
+      router.push('/#about');
+    }
+  };
+
   useEffect(() => setMounted(true), []);
+
+  const handleFooterScroll = () => {
+    console.log('Contact button clicked - attempting to scroll to footer');
+    
+    // Try multiple selectors to find the footer
+    const footer = document.querySelector('footer') || 
+                  document.querySelector('.mt-5.laptop\\:mt-40') ||
+                  document.querySelector('[class*="mt-5"]') ||
+                  document.querySelector('div:last-child');
+    
+    console.log('Footer element found:', footer);
+    
+    if (footer) {
+      console.log('Scrolling to footer element');
+      footer.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.log('No footer found, scrolling to bottom of page');
+      // Fallback: scroll to bottom of page
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -29,12 +68,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               </h1>
 
               <div className="flex items-center">
-                {data.darkMode && (
-                  <button
+                {data.darkMode && mounted && (
+                  <Button
                     onClick={() =>
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
-                    className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100"
                   >
                     <img
                       className="h-6"
@@ -43,23 +81,25 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                       }`}
                       alt="theme toggle"
                     />
-                  </button>
+                  </Button>
                 )}
 
                 <Popover.Button>
-                  <img
-                    className="h-5"
-                    src={`/images/${
-                      !open
-                        ? theme === "dark"
-                          ? "menu-white.svg"
-                          : "menu.svg"
-                        : theme === "light"
-                        ? "cancel.svg"
-                        : "cancel-white.svg"
-                    }`}
-                    alt="menu toggle"
-                  />
+                  {mounted && (
+                    <img
+                      className="h-5"
+                      src={`/images/${
+                        !open
+                          ? theme === "dark"
+                            ? "menu-white.svg"
+                            : "menu.svg"
+                          : theme === "light"
+                          ? "cancel.svg"
+                          : "cancel-white.svg"
+                      }`}
+                      alt="menu toggle"
+                    />
+                  )}
                 </Popover.Button>
               </div>
             </div>
@@ -70,57 +110,81 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               } shadow-md rounded-md`}
             >
               {!isBlog ? (
-                <div className="grid grid-cols-1">
-                  <button onClick={handleWorkScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                <div className="grid grid-cols-1 gap-3">
+                  <Button onClick={handleWorkNavigation}>
                     Work
-                  </button>
-                  <button onClick={handleAboutScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                  </Button>
+                  <Button onClick={handleAboutNavigation}>
                     About
-                  </button>
+                  </Button>
                   {showBlog && (
                     <Link href="/blog">
-                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
-                        Blog
+                      <a>
+                        <Button>
+                          Blog
+                        </Button>
                       </a>
                     </Link>
                   )}
                   {showResume && (
                     <Link href="/resume">
-                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
-                        Resume
+                      <a>
+                        <Button>
+                          Resume
+                        </Button>
                       </a>
                     </Link>
                   )}
-                  <button onClick={handleContactScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                  <Button onClick={handleContactScroll}>
                     Contact
-                  </button>
+                  </Button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1">
+                <div className="grid grid-cols-1 gap-3">
                   <Link href="/">
-                    <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
-                      Home
+                    <a>
+                      <Button>
+                        Home
+                      </Button>
                     </a>
                   </Link>
+                  <Button onClick={handleWorkNavigation}>
+                    Work
+                  </Button>
+                  <Button onClick={handleAboutNavigation}>
+                    About
+                  </Button>
                   {showBlog && (
                     <Link href="/blog">
-                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
-                        Blog
+                      <a>
+                        <Button>
+                          Blog
+                        </Button>
                       </a>
                     </Link>
                   )}
                   {showResume && (
                     <Link href="/resume">
-                      <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
-                        Resume
+                      <a>
+                        <Button>
+                          Resume
+                        </Button>
                       </a>
                     </Link>
                   )}
-                  <Link href="/#contact">
-                    <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100">
+                  {isResume ? (
+                    <Link href="/#contact">
+                      <a>
+                        <Button>
+                          Contact
+                        </Button>
+                      </a>
+                    </Link>
+                  ) : (
+                    <Button onClick={handleContactScroll || handleFooterScroll}>
                       Contact
-                    </a>
-                  </Link>
+                    </Button>
+                  )}
                 </div>
               )}
             </Popover.Panel>
@@ -130,45 +194,49 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
 
       {/* --- DESKTOP HEADER --- */}
       <div
-        className={`mt-10 mb-10 hidden flex-row items-center justify-between p-4 ${
+        className={`mt-10 mb-10 hidden flex-row items-center justify-between ${
           theme === "light" && "bg-white"
         } dark:text-white tablet:flex`}
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
+          className="font-medium cursor-pointer"
         >
           {name}.
         </h1>
 
         {!isBlog ? (
-          <div className="flex items-center gap-2">
-            <button onClick={handleWorkScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+          <div className="flex items-center gap-3">
+            <Button onClick={handleWorkNavigation}>
               Work
-            </button>
-            <button onClick={handleAboutScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+            </Button>
+            <Button onClick={handleAboutNavigation}>
               About
-            </button>
+            </Button>
 
             {showBlog && (
               <Link href="/blog">
-                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
-                  Blog
+                <a>
+                  <Button>
+                    Blog
+                  </Button>
                 </a>
               </Link>
             )}
 
             {showResume && (
               <Link href="/resume">
-                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
-                  Resume
+                <a>
+                  <Button>
+                    Resume
+                  </Button>
                 </a>
               </Link>
             )}
 
-            <button onClick={handleContactScroll} className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+            <Button onClick={handleContactScroll}>
               Contact
-            </button>
+            </Button>
 
             {mounted && theme && data.darkMode && (
               <button
@@ -184,42 +252,61 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
             )}
           </div>
         ) : (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <Link href="/">
-              <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
-                Home
+              <a>
+                <Button>
+                  Home
+                </Button>
               </a>
             </Link>
+            <Button onClick={handleWorkNavigation}>
+              Work
+            </Button>
+            <Button onClick={handleAboutNavigation}>
+              About
+            </Button>
             {showBlog && (
               <Link href="/blog">
-                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
-                  Blog
+                <a>
+                  <Button>
+                    Blog
+                  </Button>
                 </a>
               </Link>
             )}
             {showResume && (
               <Link href="/resume">
-                <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
-                  Resume
+                <a>
+                  <Button>
+                    Resume
+                  </Button>
                 </a>
               </Link>
             )}
-            <Link href="/#contact">
-              <a className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0">
+            {isResume ? (
+              <Link href="/#contact">
+                <a>
+                  <Button>
+                    Contact
+                  </Button>
+                </a>
+              </Link>
+            ) : (
+              <Button onClick={handleContactScroll || handleFooterScroll}>
                 Contact
-              </a>
-            </Link>
+              </Button>
+            )}
             {mounted && theme && data.darkMode && (
-              <button
+              <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0"
               >
                 <img
                   className="h-6"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
                   alt="toggle theme"
                 />
-              </button>
+              </Button>
             )}
           </div>
         )}

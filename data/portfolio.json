@@ -29,35 +29,35 @@
             "id": "1",
             "title": "To drill or not to drill?",
             "description": "A spatial analysis of oil drilling in Indonesia",
-            "imageSrc": "/images/Map.png",
+            "imageSrc": "/images/Wells_nolabel.png",
             "slug": "indonesia-oil-drilling"
         },
         {
             "id": "2",
             "title": "Where to grow my beans?",
             "description": "Identifying optimal zones for coffee bean plantations on Hawaiʻi island",
-            "imageSrc": "/images/Capture.PNG",
+            "imageSrc": "/images/Suitability_nolabel.png",
             "slug": "hawaii-coffee-plantations"
         },
         {
             "id": "3",
             "title": "Public investments: when and how?",
             "description": "Research on effective government spending, in collaboration with the Dutch government",
-            "imageSrc": "/images/CPB.PNG",
+            "imageSrc": "/images/Subsidy.PNG",
             "slug": "public-investments"
         },
         {
             "id": "4",
             "title": "Animals need infrastructure too",
             "description": "Assessing optimal ecoduct placement in the Gooi",
-            "imageSrc": "/images/Het_Gooi.PNG",
+            "imageSrc": "/images/Ecoduct_nolabel.png",
             "slug": "ecoduct-placement"
         },
         {
             "id": "5",
-            "title": "Take some time off fathers ",
+            "title": "Take some time off, fathers ",
             "description": "Monitoring the change in take-up of paternity leave following a Dutch parental leave reform",
-            "imageSrc": "/images/agv_takeup.svg",
+            "imageSrc": "/images/Papa.jpg",
             "slug": "paternity-leave-reform"
         }
     ],
@@ -83,24 +83,24 @@
             "description": "Apply statistics to measure the effectiveness of interventions."
         }
     ],
-    "aboutpara": "Hi-Res stands for High Resolution, High Resilience, and High Resolve. It seeks an alternative way to convey environmental and socio-economic data with high resolution that is accessible to everyone. It focuses on resilience, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes resolve, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an environmental economist with a passion for spatial analytics and data-driven solutions.",
+    "aboutpara": "Hi-Res stands for High <span class='text-blue-600 dark:text-blue-400 font-semibold'>Resolution</span>, High <span class='text-green-600 dark:text-green-400 font-semibold'>Resilience</span>, and High <span class='text-purple-600 dark:text-purple-400 font-semibold'>Resolve</span>. It seeks an alternative way to convey environmental and socio-economic data with high <span class='text-blue-600 dark:text-blue-400 font-semibold'>resolution</span> that is accessible to everyone. It focuses on <span class='text-green-600 dark:text-green-400 font-semibold'>resilience</span>, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes <span class='text-purple-600 dark:text-purple-400 font-semibold'>resolve</span>, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an environmental economist with a passion for spatial analytics and data-driven solutions.",
     "resume": {
-        "tagline": "👋  I'm an environmental economist with 3 years’ experience in research, teaching, and advisory roles. International project experience in Hong Kong, Spain, the Netherlands, Norway, Greece, and the US. Fluent in English, and Norwegian, as well as working proficiency in Spanish and French. Skilled at working across NGOs, multinationals, academia, government, and startups.",
+        "tagline": "👋  I'm an environmental economist with 3 years of experience in research, teaching, and advisory roles. International project experience in Hong Kong, Spain, the Netherlands, Norway, Greece, and the US. Fluent in English, and Norwegian, as well as working proficiency in Spanish and French. Skilled at working across NGOs, multinationals, academia, government, and startups.",
         "description": "",
         "experiences": [
             {
                 "id": "1",
                 "dates": "October 2024 - August 2025",
                 "location": "Amsterdam, Netherlands",
-                "position": "Research Assistant",
+                "position": "Research Assistant…",
                 "employer": "University of Amsterdam - Microeconomics department",
                 "bullets": "Managed and cleaned 1M+ household records.|Visualized plots for funding proposals that directly contributed to securing €20,000 in project financing."
             },
             {
                 "id": "2",
-                "dates": "October 2024 - August 2025",
-                "location": "Amsterdam, Netherlands",
-                "position": "Lecturer",
+                "dates": "",
+                "location": "",
+                "position": "…and Lecturer",
                 "employer": "University of Amsterdam - PPLE College",
                 "bullets": "Led tutorials for 120+ students across 5 economics courses.|Designed lecture materials and workshops linking core economic concepts to real-world applications.|Advised a master's thesis on econometric identification strategies."
             },
@@ -110,7 +110,7 @@
                 "location": "The Hague, Netherlands",
                 "position": "Researcher",
                 "employer": "Dutch Central Planning Bureau (CPB)",
-                "bullets": "Synthesized findings from 30+ empirical policy studies into a CPB policy brief which was later cited in government advisory discussions on public investment.|Presented my recommendations to a panel of senior directors sharpening the bureau's position on public financing."
+                "bullets": "Synthesized findings from 30+ empirical policy studies into a <a href='/projects/public-investments' class='text-blue-600 dark:text-blue-400 hover:underline'>CPB policy brief</a> which was later cited in government advisory discussions on public investment.|Presented my recommendations to a panel of senior directors sharpening the bureau's position on public financing."
             },
             {
                 "id": "4",
@@ -118,7 +118,7 @@
                 "location": "New York, USA",
                 "position": "Global Business Development Intern",
                 "employer": "TED Conferences",
-                "bullets": "Designed and pitched a WhatsApp distribution channel to senior management by synthesizing global viewership data. It launched in Oct 2024 and has since reached over 600,000 followers within its first year."
+                "bullets": "Designed and pitched a WhatsApp distribution channel to senior management by synthesizing global viewership data. <a href='https://www.whatsapp.com/channel/0029VaoxrrO2ZjCoCWnv7y1n?utm_campaign=WhatsApp%2BLaunch&utm_medium=bitly&utm_source=LinkedIn' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:underline'>It launched in Oct 2024</a> and has since reached over 600,000 followers within its first year."
             },
              {
                 "id": "5",
@@ -134,7 +134,8 @@
                 "degree": "Master of Science in Environmental Economics",
                 "university": "University of Amsterdam", 
                 "dates": "September 2022 - August 2024",
-                "location": "Amsterdam, Netherlands"
+                "location": "Amsterdam, Netherlands",
+                "bullets": "GPA: 8.8 out of 10.|Research project: <a href='/projects/indonesia-oil-drilling' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:underline'>“To Drill or Not to Drill? How Corruption Affects the Extraction of Natural Resources”</a> (9 out of 10)."
             }, 
             { 
                 "degree": "Semester study in Physics",
@@ -146,7 +147,8 @@
                 "degree": "Bachelor of Arts in International Relations",
                 "university": "IE University", 
                 "dates": "September 2016 - June 2020",
-                "location": "Madrid, Spain"
+                "location": "Madrid, Spain",
+                "bullets": "GPA: 8.8 out of 10.|Research project: <a href='https://1drv.ms/b/c/12c3c96872fa0d08/ERp4UH8Jt_NCqnOHX5qRqBYBCwHzATB8AVbae3pFJDuIxw?e=xyMgaB' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:underline'> “Globalization and Resource Scarcity”</a> (8.9 out of 10).|Extracurricular: <a href='/blog/threeblog' target='_blank' rel='noopener noreferrer' class='text-blue-600 dark:text-blue-400 hover:underline'>Policy Seminars in Nepal and Bhutan</a>; UNDP-IE Policy Lab project participant."
             }, 
             { 
                 "degree": "Exchange at the Faculty of Social Sciences",

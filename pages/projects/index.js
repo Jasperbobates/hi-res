@@ -3,8 +3,9 @@ import Router, { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { stagger } from "../../animations";
 import Header from "../../components/Header";
+import Button from "../../components/Button";
 import data from "../../data/portfolio.json";
-import { useIsomorphicLayoutEffect } from "../../utils";
+import { useIsomorphicLayoutEffect, ISOToDate } from "../../utils";
 import { getAllProjects } from "../../utils/api";
 
 const Projects = ({ projects }) => {
@@ -30,7 +31,7 @@ const Projects = ({ projects }) => {
       <Head>
         <title>Projects</title>
       </Head>
-      <div className={`container mx-auto mb-10`}>
+      <div className={`container mx-auto mb-10 px-4 mob:px-4 desktop:px-8`}>
         <Header isBlog={true}></Header>
         <div className="mt-10">
           <h1
@@ -39,6 +40,14 @@ const Projects = ({ projects }) => {
           >
             Projects.
           </h1>
+          <div className="mt-5 flex flex-wrap gap-4">
+            <Button onClick={() => router.push('/#work')}>
+              Work
+            </Button>
+            <Button onClick={() => router.push('/#about')}>
+              About
+            </Button>
+          </div>
           <div className="mt-10 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
             {projects &&
               projects.map((project) => (
@@ -56,6 +65,9 @@ const Projects = ({ projects }) => {
                   </div>
                   <h2 className="mt-5 text-4xl">{project.title}</h2>
                   <p className="mt-2 opacity-50 text-lg">{project.preview}</p>
+                  <span className="text-sm mt-5 opacity-25">
+                    {ISOToDate(project.date)}
+                  </span>
                 </div>
               ))}
           </div>
