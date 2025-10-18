@@ -57,7 +57,7 @@
             "id": "5",
             "title": "Take some time off, fathers ",
             "description": "Monitoring the change in take-up of paternity leave following a Dutch parental leave reform",
-            "imageSrc": "/images/Papa.jpg",
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/1/14/Man_Woking_from_Home_during_Paternity_Leave.jpg",
             "slug": "paternity-leave-reform"
         }
     ],

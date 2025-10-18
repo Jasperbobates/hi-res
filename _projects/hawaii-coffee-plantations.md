@@ -4,7 +4,7 @@ title: Where to grow my beans?
 tagline: Identifying optimal zones for coffee bean plantations on Hawaiʻi island
 preview: >-
   A geospatial analysis to identify the most suitable locations for coffee plantations on Hawaiʻi island.
-image: /images/Project_pics/Coffee_farm.jpg
+image: https://upload.wikimedia.org/wikipedia/commons/9/97/Coffee_plantation%2C_Kaua%CA%BBi_58.jpg
 ---
 
 ## Project Background
@@ -52,5 +52,8 @@ I combined these conditions using the suitability modeler to identify two suitab
 - [Munsart, C. (1997). American history through earth science. Bloomsbury Publishing USA.](https://books.google.no/books?hl=fr&lr=&id=COXEEAAAQBAJ&oi=fnd&pg=PR5&dq=craig+a+munsart+american+history+through+earth+sciences&ots=s9r7eAGKCI&sig=6_--a-t5T4uonxxxw4exhy8xJC4&redir_esc=y#v=onepage&q=craig%20a%20munsart%20american%20history%20through%20earth+sciences&f=false)
 - [Smith, V. E., & Bittenbender, H. C. (2008). Growing coffee in Hawaii.](https://scholarspace.manoa.hawaii.edu/items/d9ce8f1f-6420-44a0-9b0d-0310d20c9fb2)
 - [Britannica, T. Editors of Encyclopaedia. (2023, October 20). Coffee. Encyclopedia Britannica.](https://www.britannica.com/topic/coffee)
+
+## Image Attribution
+- Coffee plantation image: By [Lukas](https://www.flickr.com/people/86265563@N00) from Tokyo, Japan - [Original source](https://www.flickr.com/photos/86265563@N00/2929733036/), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=5465016)
 
 ---

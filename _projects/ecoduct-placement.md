@@ -4,7 +4,7 @@ title: Animals need infrastructure too
 tagline: Assessing optimal ecoduct placement in the Gooi
 preview: >-
   A spatial analysis project focused on identifying optimal locations for wildlife crossings (ecoducts) in the Gooi region of the Netherlands.
-image: /images/project_pics/Het_Gooi1.jpg
+image: https://upload.wikimedia.org/wikipedia/commons/2/2d/Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg
 ---
 
 ## Project Background
@@ -37,6 +37,9 @@ These variables are combined to create a friction surface which measures the dif
 
 
 The analysis identified several high-priority locations for ecoduct placement, balancing ecological needs with infrastructure constraints and budget considerations.
+
+## Image Attribution
+- Project header image: [Sillerkiil](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg)
 
 ---
 
