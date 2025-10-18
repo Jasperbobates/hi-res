@@ -10,6 +10,7 @@
 
 body {
   @apply dark:bg-black dark:text-white;
+  position: relative;
 }
 
 .gradient-circle {
@@ -27,11 +28,14 @@ body {
     rgba(107, 107, 248, 0.8) 100%
   );
 }
+
 .gradient-circle-bottom {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  bottom: -20px;
+  bottom: -30px;
+  left: 0;
+  right: 0;
   height: 30px;
   width: 100vw;
   opacity: 0.5;
