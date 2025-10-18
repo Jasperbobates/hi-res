@@ -12,13 +12,10 @@ collaborators:
   - name: "Indonesian Audit Board"
     logo: "/images/Logos/BPK_logo.svg"
     website: "https://www.bpk.go.id"
-document:
+link:
   title: "To Drill Or Not To Drill? How Corruption Affects The Extraction of Natural Resources"
-  filename: "Master's thesis - Jasper B. Bates.pdf"
-  url: "/documents/Master's thesis - Jasper B. Bates.pdf"
-  size: 3200000
-  type: "Master's thesis"
-  description: "A spatial analysis of oil drilling patterns and institutional governance in Indonesian municipalities"
+  url: "https://1drv.ms/b/c/12c3c96872fa0d08/EQgN-nJoycMggBIxJQAAAAAB9YW_Vm0XcRpBid4RO7nXjA?e=XB45ue"
+  type: "Master's Thesis"
 ---
 
 # Project Overview

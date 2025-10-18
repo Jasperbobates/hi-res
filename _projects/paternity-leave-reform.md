@@ -57,3 +57,6 @@ The study employed:
     <img src="/images/project_pics/Firm_size.svg" alt="Paternity Leave Take-up by Firm Size" style="width: 100%; height: 320px;" />
   </div>
 </div>
+
+## Image Attribution
+- Project header image: [CIPHR Connect, CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Man_Woking_from_Home_during_Paternity_Leave.jpg)

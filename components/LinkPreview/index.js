@@ -9,7 +9,16 @@ const LinkPreview = ({ link, showHeader = true }) => {
         <img 
           src="/images/preview_pics/CPB_publication.png" 
           alt="CPB Publication" 
-          className="w-8 h-8 object-contain"
+          className="w-12 h-12 object-contain border-2 border-black rounded"
+        />
+      );
+    }
+    if (url.includes('1drv.ms') || url.includes('onedrive')) {
+      return (
+        <img 
+          src="/images/preview_pics/Thesis_cover.jpg" 
+          alt="Master's Thesis" 
+          className="w-12 h-12 object-cover rounded border-2 border-black"
         />
       );
     }
