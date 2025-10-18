@@ -45,9 +45,14 @@ The GNH has served Bhutan not only as a measurement tool for happiness but as a 
   </figure>
 </div>
 
-<div class="flex flex-wrap gap-4 justify-start mt-10">
+<div class="flex flex-wrap gap-4 justify-between mt-10">
   <figure>
     <img src="/images/blog_pics/DSCN0628.JPG" alt="Buddha" class="collage"/>
     <figcaption class="mt-2 text-sm text-gray-500 constrained"> The large Golden Buddha looks majestically over the capital of Thimphu. Spirituality remains a central pillar of the GNH measure. </figcaption>
+  </figure>
+
+  <figure>
+    <img src="/images/blog_pics/WhatsApp Image 2019-04-22 at 12.46.50.jpg" alt="Bhutan landscape" class="collage" style="object-position: center top;"/>
+    <figcaption class="mt-2 text-sm text-gray-500">I was very happy to get a traditional Gho of my own!</figcaption>
   </figure>
 </div>
