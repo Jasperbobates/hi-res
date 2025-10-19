@@ -16,21 +16,21 @@ collaborators:
     website: "https://www.uva.nl"
 ---
 
-### Policy context
+## Policy context
 
 In June 2020, a new Dutch paternity leave reform was instituted. The extended paternal leave policy (AGV), provides fathers with five additional weeks of paid leave in addition to the one-week standard leave. Fathers can choose if and when they want to take this leave within a six-month period. They are provided 70% of their base salary through the benefit scheme and employers are given the option to top up the remainder.
 
-### Project overview
+## Project overview
 
 Our research team received registration data from the Employee Insurance Agency (UWV) and labor data from the Central Statistical Bureau of the Netherlands (CBS). I prepared the statistical analysis by merging the two datasets and creating easy-to-use replication files for the research team.
 
-### Research Methodology
+## Research Methodology
 
 The study employed:
 - **Longitudinal data analysis** 
 - **Regression discontinuity design** around the cutoff date 
 
-### Preliminary Findings
+## Preliminary Findings
 
 - **Networking effects**: A father taking additional leave increases the likelihood of their colleagues taking it as well.
 - **Seasonal variations**: Take-up rates are lower during summer seasons and higher during winter seasons.
@@ -58,9 +58,7 @@ The study employed:
   </div>
 </div>
 
-<div class="mt-12"></div>
-
 ---
 
 ###### Image Attribution
-  - <span class="text-xs text-gray-500">Project header image: [CIPHR Connect, CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Man_Woking_from_Home_during_Paternity_Leave.jpg)</span>
+- Project header image: [CIPHR Connect, CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Man_Woking_from_Home_during_Paternity_Leave.jpg)

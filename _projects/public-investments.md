@@ -45,5 +45,3 @@ The study employed:
 ### Impact
 
 The findings were presented to senior directors at the CPB and contributed to ongoing discussions on public financing strategies.
-
-<div class="mt-12"></div>

@@ -52,9 +52,6 @@ I combined these conditions using the suitability modeler to identify two suitab
 - [Munsart, C. (1997). American history through earth science. Bloomsbury Publishing USA.](https://books.google.no/books?hl=fr&lr=&id=COXEEAAAQBAJ&oi=fnd&pg=PR5&dq=craig+a+munsart+american+history+through+earth+sciences&ots=s9r7eAGKCI&sig=6_--a-t5T4uonxxxw4exhy8xJC4&redir_esc=y#v=onepage&q=craig%20a%20munsart%20american%20history%20through%20earth+sciences&f=false)
 - [Smith, V. E., & Bittenbender, H. C. (2008). Growing coffee in Hawaii.](https://scholarspace.manoa.hawaii.edu/items/d9ce8f1f-6420-44a0-9b0d-0310d20c9fb2)
 - [Britannica, T. Editors of Encyclopaedia. (2023, October 20). Coffee. Encyclopedia Britannica.](https://www.britannica.com/topic/coffee)
-
-<div class="mt-12"></div>
-
 ---
 
 ###### Image Attribution
