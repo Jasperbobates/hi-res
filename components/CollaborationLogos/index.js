@@ -4,7 +4,8 @@ const CollaborationLogos = ({ collaborators = [] }) => {
   if (!collaborators || collaborators.length === 0) return null;
 
   return (
-    <div className="mt-8 pt-6 border-t border-gray-200">
+    <div className="mt-8 pt-6">
+      <hr className="border-gray-300 dark:border-gray-600 mb-6" />
       <div className="flex flex-col items-end">
         <p className="text-sm text-gray-600 mb-4">In collaboration with:</p>
         <div className="flex flex-wrap justify-end gap-4">
