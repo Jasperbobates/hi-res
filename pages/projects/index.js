@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Router, { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { stagger } from "../../animations";
@@ -56,12 +57,14 @@ const Projects = ({ projects }) => {
                   key={project.slug}
                   onClick={() => Router.push(`/projects/${project.slug}`)}
                 >
-                  <div className="relative rounded-lg overflow-hidden">
-                    <img
-                      className="w-full h-96 rounded-lg shadow-lg object-cover hover:scale-110 transition-all ease-out duration-300"
+                  <div className="relative rounded-lg shadow-lg overflow-hidden w-full h-96">
+                    <Image
                       src={project.image}
                       alt={project.title}
-                    ></img>
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300"
+                    />
                   </div>
                   <h2 className="mt-5 text-4xl">{project.title}</h2>
                   <p className="mt-2 opacity-50 text-lg">{project.preview}</p>

@@ -60,5 +60,10 @@ The study employed:
 
 ---
 
-###### Image Attribution
-- Project header image: [CIPHR Connect, CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Man_Woking_from_Home_during_Paternity_Leave.jpg)
+<h6 class="not-prose text-sm font-semibold mb-1">Image Attribution</h6>
+<div class="not-prose text-xs text-gray-500 leading-none">
+  Project header image:
+  <a href="https://creativecommons.org/licenses/by/2.0" class="underline">CIPHR Connect, CC BY 2.0</a>,
+  via
+  <a href="https://commons.wikimedia.org/wiki/File:Man_Woking_from_Home_during_Paternity_Leave.jpg" class="underline">Wikimedia Commons</a>
+</div>

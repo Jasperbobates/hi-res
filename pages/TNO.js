@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
+import Head from "next/head";
 import { getPostBySlug } from "../utils/api";
 import Header from "../components/Header";
 import ContentSection from "../components/ContentSection";
 import Footer from "../components/Footer";
-import Head from "next/head";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 
@@ -38,14 +38,12 @@ const TNO = ({ post }) => {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div
-        className={`container mx-auto mt-10 px-4 mob:px-4 desktop:px-8`}
-      >
+      <div className={`container mx-auto mt-10 px-4 mob:px-4 desktop:px-8`}>
         <Header isBlog={true} isResume={false} handleContactScroll={handleContactScroll} />
-        <div className="mt-10 flex flex-col">
+        <div className="mt-6 flex flex-col items-center">
           <h1
             ref={textOne}
-            className="mt-10 text-4xl mob:text-3xl laptop:text-6xl text-bold"
+            className="mt-0 text-4xl mob:text-3xl laptop:text-6xl text-bold"
           >
             {post.title}
           </h1>
@@ -56,6 +54,7 @@ const TNO = ({ post }) => {
             {post.tagline}
           </h2>
         </div>
+
         <ContentSection content={post.content}></ContentSection>
         <Footer />
       </div>
@@ -64,23 +63,24 @@ const TNO = ({ post }) => {
 };
 
 export async function getStaticProps() {
-  const post = getPostBySlug('tno', [
-    "date",
-    "slug",
-    "preview",
-    "title",
-    "tagline",
-    "preview",
-    "image",
-    "imagePosition",
-    "content",
-  ]);
+  const post = getPostBySlug(
+    "TNO",
+    [
+      "date",
+      "slug",
+      "preview",
+      "title",
+      "tagline",
+      "image",
+      "imagePosition",
+      "content",
+    ],
+    "_temp-posts" // 👈 This tells it to look here instead
+  );
 
   return {
     props: {
-      post: {
-        ...post,
-      },
+      post,
     },
   };
 }

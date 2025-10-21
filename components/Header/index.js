@@ -2,13 +2,17 @@ import { Popover } from "@headlessui/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Button from "../Button";
 import data from "../../data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog, isResume }) => {
   const router = useRouter();
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  // resolvedTheme gives the final "light" or "dark" after system preference
+  // resolution. Use it when deciding which icon/classes to show.
+  const currentTheme = resolvedTheme || theme;
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
@@ -58,34 +62,38 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 {data.darkMode && mounted && (
                   <Button
                     onClick={() =>
-                      setTheme(theme === "dark" ? "light" : "dark")
+                      setTheme(currentTheme === "dark" ? "light" : "dark")
                     }
                   >
-                    <img
-                      className="h-6"
-                      src={`/images/${
-                        theme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
-                      alt="theme toggle"
-                    />
+                    <div className="h-6 w-6 relative">
+                      <Image
+                        src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
+                        alt="theme toggle"
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
                   </Button>
                 )}
 
-                <Popover.Button>
+                <Popover.Button className="text-sm p-1 m-1 rounded-lg">
                   {mounted && (
-                    <img
-                      className="h-5"
-                      src={`/images/${
-                        !open
-                          ? theme === "dark"
-                            ? "menu-white.svg"
-                            : "menu.svg"
-                          : theme === "light"
-                          ? "cancel.svg"
-                          : "cancel-white.svg"
-                      }`}
-                      alt="menu toggle"
-                    />
+                    <div className="h-6 w-6 relative">
+                      <Image
+                        src={`/images/${
+                          !open
+                            ? currentTheme === "dark"
+                              ? "menu-white.svg"
+                              : "menu.svg"
+                            : currentTheme === "light"
+                            ? "cancel.svg"
+                            : "cancel-white.svg"
+                        }`}
+                        alt="menu toggle"
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
                   )}
                 </Popover.Button>
               </div>
@@ -93,7 +101,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
 
             <Popover.Panel
               className={`absolute right-0 z-10 w-11/12 p-4 ${
-                theme === "dark" ? "bg-slate-800" : "bg-white"
+                currentTheme === "dark" ? "bg-slate-800" : "bg-white"
               } shadow-md rounded-md`}
             >
               {!isBlog ? (
@@ -172,7 +180,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
       {/* --- DESKTOP HEADER --- */}
       <div
         className={`mt-10 mb-10 hidden flex-row items-center justify-between ${
-          theme === "light" && "bg-white"
+          currentTheme === "light" && "bg-white"
         } dark:text-white tablet:flex`}
       >
         <h1
@@ -215,16 +223,19 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               Contact
             </Button>
 
-            {mounted && theme && data.darkMode && (
+            {mounted && currentTheme && data.darkMode && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
                 className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100 tablet:first:ml-0"
               >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                  alt="toggle theme"
-                />
+                <div className="h-6 w-6 relative">
+                  <Image
+                    src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
+                    alt="toggle theme"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </button>
             )}
           </div>
@@ -264,15 +275,18 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
             <Button onClick={() => handleContactNavigation()}>
               Contact
             </Button>
-            {mounted && theme && data.darkMode && (
+            {mounted && currentTheme && data.darkMode && (
               <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
               >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                  alt="toggle theme"
-                />
+                <div className="h-6 w-6 relative">
+                  <Image
+                    src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
+                    alt="toggle theme"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </Button>
             )}
           </div>

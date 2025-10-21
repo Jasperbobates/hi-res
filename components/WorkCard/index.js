@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const WorkCard = ({ img, name, description, onClick, backgroundColor = "#ffffff", objectPosition = "center", aspectRatio = "auto" }) => {
   return (
@@ -7,20 +8,19 @@ const WorkCard = ({ img, name, description, onClick, backgroundColor = "#ffffff"
       onClick={onClick}
     >
       <div
-        className="relative rounded-lg overflow-hidden transition-all ease-out duration-300"
+        className={`relative rounded-lg overflow-hidden transition-all ease-out duration-300 w-full h-72 tablet:h-96`}
         style={{ backgroundColor: backgroundColor }}
       >
-        <img
-          alt={name}
-          className={`w-full h-96 rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300 ${
-            aspectRatio !== "auto" ? "object-contain" : "object-cover"
-          }`}
-          style={{ 
-            objectPosition: objectPosition,
-            aspectRatio: aspectRatio !== "auto" ? aspectRatio : undefined
-          }}
-          src={img}
-        ></img>
+          return (
+            <Image
+              src={img}
+              alt={name}
+              layout="fill"
+              objectFit={"cover"}
+              objectPosition={objectPosition}
+              className="rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300"
+            />
+          );
       </div>
       <h1 className="mt-5 text-3xl font-medium">
         {name ? name : "Project Name"}
