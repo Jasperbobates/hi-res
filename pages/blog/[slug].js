@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Image from "next/image";
 import { getPostBySlug, getAllPosts } from "../../utils/api";
 import Header from "../../components/Header";
 import ContentSection from "../../components/ContentSection";
@@ -46,16 +47,16 @@ const BlogPost = ({ post }) => {
       >
         <Header isBlog={true} isResume={false} handleContactScroll={handleContactScroll} />
         <div className="mt-10 flex flex-col">
-          <img
-            className="w-full h-96 rounded-lg shadow-lg object-cover"
-            style={{ 
-              objectPosition: post.imagePosition === 'left' ? 'left center' : 
-                            post.imagePosition === 'zoom-out' ? 'center' : 'center',
-              objectFit: post.imagePosition === 'zoom-out' ? 'contain' : 'cover'
-            }}
-            src={post.image}
-            alt={post.title}
-          ></img>
+          <div className="relative w-full h-56 tablet:h-96 rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src={post.image}
+              alt={post.title}
+              layout="fill"
+              objectFit={post.imagePosition === 'zoom-out' ? 'contain' : 'cover'}
+              objectPosition={post.imagePosition === 'left' ? 'left center' : 'center'}
+              className="rounded-lg"
+            />
+          </div>
           <h1
             ref={textOne}
             className="mt-10 text-4xl mob:text-3xl laptop:text-6xl text-bold"

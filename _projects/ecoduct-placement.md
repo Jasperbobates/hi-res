@@ -38,8 +38,14 @@ These variables are combined to create a friction surface which measures the dif
 The analysis identified several high-priority locations for ecoduct placement, balancing ecological needs with infrastructure constraints and budget considerations.
 
 ---
-###### Image Attribution
-  - <span class="text-xs text-gray-500">Project header image: [Sillerkiil](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg)</span>
+<h6 class="not-prose text-sm font-semibold mt-4 mb-1">Image Attribution</h6>
+<div class="not-prose text-xs text-gray-500 leading-none">
+  Project header image:
+  <a href="https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg" class="underline">Sillerkiil</a>,
+  <a href="https://creativecommons.org/licenses/by-sa/4.0" class="underline">CC BY-SA 4.0</a>,
+  via
+  <a href="https://commons.wikimedia.org/wiki/File:Kolu_%C3%B6kodukt_Tartu_maanteel_2021._aasta_septembris.jpg" class="underline">Wikimedia Commons</a>
+</div>
 
 ---
 

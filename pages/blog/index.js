@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Router, { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { stagger } from "../../animations";
@@ -54,13 +55,15 @@ const Blog = ({ posts }) => {
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
-                    <div className="relative rounded-lg overflow-hidden">
-                      <img
-                        className="w-full h-60 rounded-lg shadow-lg object-cover hover:scale-110 transition-all ease-out duration-300"
-                        style={{ objectPosition: post.slug === 'firstblog' ? 'left center' : 'center' }}
+                    <div className="relative rounded-lg overflow-hidden w-full h-60">
+                      <Image
                         src={post.image}
                         alt={post.title}
-                      ></img>
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition={post.slug === 'firstblog' ? 'left center' : 'center'}
+                        className="rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300"
+                      />
                     </div>
                     <h2 className="mt-5 text-4xl">{post.title}</h2>
                     <p className="mt-2 opacity-50 text-lg">{post.preview}</p>

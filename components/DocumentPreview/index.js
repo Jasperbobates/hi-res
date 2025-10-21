@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const DocumentPreview = ({ document }) => {
   if (!document) return null;
@@ -14,11 +15,9 @@ const DocumentPreview = ({ document }) => {
   const getFileIcon = (filename) => {
     // Use thesis cover image for all documents
     return (
-      <img 
-        src="/images/preview_pics/Thesis_cover.jpg" 
-        alt="Document Cover" 
-        className="w-16 h-16 object-cover rounded border-2 border-gray-300 dark:border-gray-600"
-      />
+      <div className="w-16 h-16 relative">
+        <Image src="/images/preview_pics/Thesis_cover.jpg" alt="Document Cover" layout="fill" objectFit="cover" className="rounded border-2 border-gray-300 dark:border-gray-600" />
+      </div>
     );
   };
 

@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Image from "next/image";
 import { getProjectBySlug, getAllProjects } from "../../utils/api";
 import Header from "../../components/Header";
 import ContentSection from "../../components/ContentSection";
@@ -50,19 +51,19 @@ const ProjectPost = ({ project }) => {
         />
         <div className="mt-10 flex flex-col items-center">
           {project.image && (
-            <img
-              className={`rounded-lg shadow-lg object-cover ${
-                project.slug === 'public-investments' 
-                  ? 'w-full max-w-4xl h-auto' 
-                  : 'w-full h-96'
-              }`}
-              style={{ 
-                objectPosition: 'center',
-                aspectRatio: project.slug === 'public-investments' ? '1046/529' : 'auto'
-              }}
-              src={project.image}
-              alt={project.title}
-            ></img>
+            <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={1046}
+                height={529}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="object-cover"
+                priority={project.slug === 'hawaii-coffee-plantations'} // optional: preloads key image
+              />
+            </div>
           )}
           <h1
             ref={textOne}

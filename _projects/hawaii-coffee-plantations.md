@@ -4,7 +4,7 @@ title: Where to grow my beans?
 tagline: Identifying optimal zones for coffee bean plantations on Hawaiʻi island
 preview: >-
   A geospatial analysis to identify the most suitable locations for coffee plantations on Hawaiʻi island.
-image: https://upload.wikimedia.org/wikipedia/commons/9/97/Coffee_plantation%2C_Kaua%CA%BBi_58.jpg
+image: https://upload.wikimedia.org/wikipedia/commons/9/97/Coffee_plantation%2C_Kaua%CA%BBi_58.jpg?width=1200
 ---
 
 ### Project Background
@@ -15,7 +15,8 @@ According to Munsart (1997):
 Furthermore, ideal growing conditions for coffee usually require high elevation, moisture, sun and shade (Britannica, 2023). I combined these two insights to assess the most suitable areas for coffee bean plantations on Hawaiʻi island. 
 
 <p style="text-decoration: underline;">Key factors considered:</p>
-<div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+
+<div class="image-grid">
   <div style="flex: 1;">
     <h4 style="font-size: 1rem; font-weight: 500; margin: 0; line-height: 1;">Rainfall</h4>
     <p style="font-size: 0.875rem; color: #6b7280; margin: 0 0 0.5rem 0; line-height: 1;">1000-2500mm</p>
@@ -54,7 +55,14 @@ I combined these conditions using the suitability modeler to identify two suitab
 - [Britannica, T. Editors of Encyclopaedia. (2023, October 20). Coffee. Encyclopedia Britannica.](https://www.britannica.com/topic/coffee)
 ---
 
-###### Image Attribution
-  - <span class="text-xs text-gray-500">Coffee plantation image: By [Lukas](https://www.flickr.com/people/86265563@N00) from Tokyo, Japan - [Original source](https://www.flickr.com/photos/86265563@N00/2929733036/), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=5465016)
+<h6 class="not-prose text-sm font-semibold mb-1">Image Attribution</h6>
+<div class="not-prose text-xs text-gray-500 leading-none m-0">
+  Coffee plantation image: By 
+  <a href="https://www.flickr.com/people/86265563@N00" class="underline">Lukas</a>
+  from Tokyo, Japan –
+  <a href="https://www.flickr.com/photos/86265563@N00/2929733036/" class="underline">Original source</a>,
+  <a href="https://creativecommons.org/licenses/by/2.0" class="underline">CC BY 2.0</a>,
+  <a href="https://commons.wikimedia.org/w/index.php?curid=5465016" class="underline">Wikimedia Commons</a>
+</div>
 
 ---

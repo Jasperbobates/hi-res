@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const LinkPreview = ({ link, showHeader = true }) => {
   if (!link) return null;
@@ -6,20 +7,16 @@ const LinkPreview = ({ link, showHeader = true }) => {
   const getLinkIcon = (url) => {
     if (url.includes('cpb.nl')) {
       return (
-        <img 
-          src="/images/preview_pics/CPB_publication.png" 
-          alt="CPB Publication" 
-          className="w-12 h-12 object-contain border-2 border-black rounded"
-        />
+        <div className="w-12 h-12 relative">
+          <Image src="/images/preview_pics/CPB_publication.png" alt="CPB Publication" layout="fill" objectFit="contain" className="rounded" />
+        </div>
       );
     }
     if (url.includes('1drv.ms') || url.includes('onedrive')) {
       return (
-        <img 
-          src="/images/preview_pics/Thesis_cover.jpg" 
-          alt="Master's Thesis" 
-          className="w-12 h-12 object-cover rounded border-2 border-black"
-        />
+        <div className="w-12 h-12 relative">
+          <Image src="/images/preview_pics/Thesis_cover.jpg" alt="Master's Thesis" layout="fill" objectFit="cover" className="rounded" />
+        </div>
       );
     }
     return (

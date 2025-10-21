@@ -1,4 +1,20 @@
-/* Markdown Styling */
+/* Image inversion */
+.invert-signature {
+  filter: none;
+  transition: filter 0.3s ease;
+}
+
+.dark .invert-signature {
+  filter: invert(1) brightness(2);
+}
+
+/* override link font */
+.prose .text-xs a,
+.text-xs a {
+  font-size: inherit !important;
+  color: inherit !important;
+  text-decoration: underline;
+}
 
 /* Markdown Container */
 
@@ -270,31 +286,65 @@
 @media (max-width: 767px) {
   .markdown-class .paternal-leave-grid {
     flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important;
   }
-  
-  .markdown-class .paternal-leave-grid > div {
+
+  .markdown-class .paternal-leave-grid>div {
     flex: 1 1 100% !important;
     max-width: 100% !important;
     width: 100% !important;
   }
-  
+
   .markdown-class .paternal-leave-grid img {
-    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
+    /* ✅ Let height adjust automatically */
+    display: block !important;
+    object-fit: cover !important;
+    /* ✅ cover instead of contain removes bottom padding */
     object-position: center !important;
-    height: 187px !important;
+    border-radius: 0.5rem !important;
   }
 }
 
-/* Mobile responsive overrides for coffee project 4x1 grid */
+.image-grid {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-items: stretch;
+  /* ensures equal height cards */
+}
+
+.image-grid>div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* stack text above image */
+  justify-content: space-between;
+  /* push image down */
+}
+
+/* Image styling for consistency */
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+/* Mobile layout */
 @media (max-width: 767px) {
-  .markdown-class div[style*="display: flex"][style*="gap: 0.5rem"][style*="margin-top: 1rem"] {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0.5rem !important;
+  .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
   }
-  
-  .markdown-class div[style*="display: flex"][style*="gap: 0.5rem"][style*="margin-top: 1rem"] > div {
-    flex: none !important;
+
+  .image-grid>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 

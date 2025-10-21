@@ -31,7 +31,7 @@ The starting point of the analyses begins with two conflicting predictions on ho
 
 **The Disinvestment Effect** - Corrupt institutions tend to correlate with low ease of doing business. Resource owners will therefore decrease their investment efforts when they deem the business environment to be too challenging. This problem is compounded by the high upfront investments needed to extract oil and natural gas resources, leading many potential petroleum companies to avoid entering the market altogether. We should therefore expect overall extraction volumes to decrease.
 
-What these two predictions highlight is that there is a sequential decision to be made: to drill, or not to drill. And if so, how much? This succinctly describes the central thesis of this dissertation.
+What these two predictions highlight is that there is a sequential decision to be made: to drill, or not to drill? And if so, how much? This succinctly describes the central thesis of this dissertation.
 
 # Methodology
 
