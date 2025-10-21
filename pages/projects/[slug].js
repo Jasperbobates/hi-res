@@ -57,6 +57,7 @@ const ProjectPost = ({ project }) => {
                 alt={project.title}
                 width={1046}
                 height={529}
+                unoptimized={true}
                 layout="responsive"
                 objectFit="cover"
                 objectPosition="center"

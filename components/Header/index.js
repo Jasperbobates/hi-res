@@ -105,72 +105,57 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               } shadow-md rounded-md`}
             >
               {!isBlog ? (
-                <div className="grid grid-cols-1 gap-3">
-                  <Button onClick={() => handleWorkNavigation(close)}>
+                <div className="flex flex-col gap-2 items-stretch text-left">
+                  <Button classes="w-full justify-start" onClick={() => handleWorkNavigation(close)}>
                     Work
                   </Button>
-                  <Button onClick={() => handleAboutNavigation(close)}>
+                  <Button classes="w-full justify-start" onClick={() => handleAboutNavigation(close)}>
                     About
                   </Button>
                   {showBlog && (
                     <Link href="/blog">
-                      <a>
-                        <Button onClick={close}>
-                          Blog
-                        </Button>
-                      </a>
+                      <Button classes="w-full justify-start" onClick={close}>
+                        Blog
+                      </Button>
                     </Link>
                   )}
                   {showResume && (
                     <Link href="/resume">
-                      <a>
-                        <Button onClick={close}>
-                          Resume
-                        </Button>
-                      </a>
+                      <Button classes="w-full justify-start" onClick={close}>
+                        Resume
+                      </Button>
                     </Link>
                   )}
-                  <Button onClick={() => handleContactNavigation(close)}>
+                  <Button classes="w-full justify-start" onClick={() => handleContactNavigation(close)}>
                     Contact
                   </Button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-3">
-                  <Link href="/">
-                    <a>
-                      <Button onClick={close}>
-                        Home
-                      </Button>
-                    </a>
-                  </Link>
-                  <Button onClick={() => handleWorkNavigation(close)}>
-                    Work
-                  </Button>
-                  <Button onClick={() => handleAboutNavigation(close)}>
-                    About
-                  </Button>
-                  {showBlog && (
-                    <Link href="/blog">
-                      <a>
-                        <Button onClick={close}>
+                  <div className="flex flex-col gap-2 items-stretch text-left">
+                    <Button classes="w-full justify-start" onClick={() => handleWorkNavigation(close)}>
+                      Work
+                    </Button>
+                    <Button classes="w-full justify-start" onClick={() => handleAboutNavigation(close)}>
+                      About
+                    </Button>
+                    {showBlog && (
+                      <Link href="/blog">
+                        <Button classes="w-full justify-start" onClick={close}>
                           Blog
                         </Button>
-                      </a>
-                    </Link>
-                  )}
-                  {showResume && (
-                    <Link href="/resume">
-                      <a>
-                        <Button onClick={close}>
+                      </Link>
+                    )}
+                    {showResume && (
+                      <Link href="/resume">
+                        <Button classes="w-full justify-start" onClick={close}>
                           Resume
                         </Button>
-                      </a>
-                    </Link>
-                  )}
-                  <Button onClick={() => handleContactNavigation(close)}>
-                    Contact
-                  </Button>
-                </div>
+                      </Link>
+                    )}
+                    <Button classes="w-full justify-start" onClick={() => handleContactNavigation(close)}>
+                      Contact
+                    </Button>
+                  </div>
               )}
             </Popover.Panel>
           </>

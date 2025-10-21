@@ -110,9 +110,8 @@ export default function Home() {
           </div>
 
         </div>
-        <div id="work" className="mt-10 laptop:mt-30" ref={workRef}>
+        <div id="work" className="mt-16 mob:mt-28 laptop:mt-30" ref={workRef}>
           <h1 className="text-2xl text-bold">Work.</h1>
-
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => {
               // Define background colors for specific projects
@@ -165,7 +164,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="about" className="mt-10 laptop:mt-40" ref={aboutRef}>
+        <div id="about" className="mt-16 mob:mt-28 laptop:mt-40" ref={aboutRef}>
           <h1 className="text-2xl text-bold">About.</h1>
           <div className="mt-5">
             <div 
@@ -174,7 +173,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="mt-10 laptop:mt-40">
+        <div className="mt-16 mob:mt-28 laptop:mt-40">
           <h1 className="text-2xl text-bold">The Hi-Res Vision.</h1>
           <div className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
@@ -186,7 +185,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div id="contact" ref={contactRef}>
+        <div id="contact" className="mt-16 mob:mt-28 laptop:mt-40" ref={contactRef}>
           <Footer />
         </div>
       </div>
