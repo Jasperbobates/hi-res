@@ -36,7 +36,7 @@ class MyDocument extends Document {
                     <meta property="og:url" content="https://hi-res.vercel.app" />
                     <meta
                         property="og:image"
-                        content="https://hi-res.vercel.app/og-image.jpg"
+                        content="https://hi-res.vercel.app/og-image.png"
                     />
 
                     {/* ✅ Twitter card */}
@@ -44,7 +44,7 @@ class MyDocument extends Document {
                     <meta name="twitter:title" content="Hi-Res by Jasper Bates" />
                     <meta
                         name="twitter:image"
-                        content="https://hi-res.vercel.app/og-image.jpg"
+                        content="https://hi-res.vercel.app/og-image.png"
                     />
                 </Head>
                 <body>
