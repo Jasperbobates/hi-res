@@ -30,6 +30,7 @@
             "title": "To drill or not to drill?",
             "description": "A spatial analysis of oil drilling in Indonesia",
             "imageSrc": "/images/Wells_nolabel.png",
+            "category": ["12 - Responsible Consumption and Production", "16 - Peace, Justice and Strong Institutions"],
             "slug": "indonesia-oil-drilling"
         },
         {
@@ -37,6 +38,7 @@
             "title": "Where to grow my beans?",
             "description": "Identifying optimal zones for coffee bean plantations on Hawaiʻi island",
             "imageSrc": "/images/Suitability_nolabel.png",
+            "category": "2 - Zero Hunger",
             "slug": "hawaii-coffee-plantations"
         },
         {
@@ -44,6 +46,7 @@
             "title": "Public investments: when and how?",
             "description": "Research on effective government spending, in collaboration with the Dutch government",
             "imageSrc": "/images/Subsidy.png",
+            "category": ["8 - Decent Work and Economic Growth", "9 - Industry, Innovation and Infrastructure"],
             "slug": "public-investments"
         },
         {
@@ -51,6 +54,7 @@
             "title": "Animals need infrastructure too",
             "description": "Assessing optimal ecoduct placement in the Gooi",
             "imageSrc": "/images/Ecoduct_nolabel.png",
+            "category": "15 - Life on Land",
             "slug": "ecoduct-placement"
         },
         {
@@ -58,6 +62,7 @@
             "title": "Take some time off, fathers ",
             "description": "Monitoring the change in take-up of paternity leave following a Dutch parental leave reform",
             "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/1/14/Man_Woking_from_Home_during_Paternity_Leave.jpg",
+            "category": ["5 - Gender Equality", "8 - Decent Work and Economic Growth"],
             "slug": "paternity-leave-reform"
         }
     ],
