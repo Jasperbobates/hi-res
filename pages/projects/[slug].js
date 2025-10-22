@@ -51,20 +51,39 @@ const ProjectPost = ({ project }) => {
         />
         <div className="mt-10 flex flex-col items-center">
           {project.image && (
-            <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={1046}
-                height={529}
-                unoptimized={true}
-                layout="responsive"
-                objectFit="cover"
-                objectPosition="center"
-                className="object-cover"
-                priority={project.slug === 'hawaii-coffee-plantations'} // optional: preloads key image
-              />
-            </div>
+            project.slug === 'public-investments' ? (
+              (() => {
+                // Use next/image with responsive layout and an explicit aspect ratio
+                const parts = '1046/529'.split('/');
+                const w = parseFloat(parts[0]) || 1046;
+                const h = parseFloat(parts[1]) || 529;
+                return (
+                  <div className="w-full max-w-4xl">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      layout="responsive"
+                      width={w}
+                      height={h}
+                      objectFit="cover"
+                      objectPosition="center"
+                      className="rounded-lg shadow-lg"
+                    />
+                  </div>
+                );
+              })()
+            ) : (
+              <div className="relative rounded-lg overflow-hidden w-full h-56 tablet:h-96">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  className="rounded-lg shadow-lg"
+                />
+              </div>
+            )
           )}
           <h1
             ref={textOne}
