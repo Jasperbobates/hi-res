@@ -7,7 +7,10 @@ const nextConfig = {
   generateEtags: false,
   // Image optimization
   images: {
-    domains: ['upload.wikimedia.org'],
+    domains: [
+      "gfx.nrk.no",
+      "upload.wikimedia.org",
+    ],
     formats: ['image/webp', 'image/avif'],
   },
   // Bundle analyzer (uncomment to analyze bundle)
