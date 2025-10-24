@@ -33,7 +33,7 @@ const Projects = ({ projects }) => {
         <title>Projects</title>
       </Head>
       <div className={`container mx-auto mb-10 px-4 mob:px-4 desktop:px-8`}>
-        <Header isBlog={true}></Header>
+        <Header/>
         <div className="mt-10">
           <h1
             ref={text}
@@ -61,8 +61,9 @@ const Projects = ({ projects }) => {
                     <Image
                       src={project.image}
                       alt={project.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit: "cover" }}
                       className="rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300"
                     />
                   </div>

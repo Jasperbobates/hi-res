@@ -25,10 +25,10 @@ const WorkCard = ({
         <Image
           src={img}
           alt={name || "Project image"}
-          layout="fill"                     // ✅ correct for Next.js 12
-          objectFit="cover"                 // ✅ fill behavior
-          objectPosition={objectPosition}   // ✅ centers image
+          fill
+          style={{ objectFit: "cover", objectPosition: { objectPosition } }}               // ✅ correct for Next.js 12
           className="rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority
         />
       </div>

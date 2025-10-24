@@ -152,8 +152,9 @@ export default function Home() {
                       <Image
                         src={imagePath}
                         alt={cat}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="absolute inset-0"
                       />
                       <div

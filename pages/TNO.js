@@ -39,7 +39,7 @@ const TNO = ({ post }) => {
       <div className="gradient-circle-bottom"></div>
 
       <div className={`container mx-auto mt-10 px-4 mob:px-4 desktop:px-8`}>
-        <Header isBlog={true} isResume={false} handleContactScroll={handleContactScroll} />
+        <Header handleContactScroll={handleContactScroll} />
         <div className="mt-6 flex flex-col items-center">
           <h1
             ref={textOne}

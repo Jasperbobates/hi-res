@@ -16,7 +16,12 @@ const DocumentPreview = ({ document }) => {
     // Use thesis cover image for all documents
     return (
       <div className="w-16 h-16 relative">
-        <Image src="/images/preview_pics/Thesis_cover.jpg" alt="Document Cover" layout="fill" objectFit="cover" className="rounded border-2 border-gray-300 dark:border-gray-600" />
+        <Image src="/images/preview_pics/Thesis_cover.jpg" 
+              alt="Document Cover" 
+              fill 
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              style={{ objectFit: "cover" }} 
+              className="rounded border-2 border-gray-300 dark:border-gray-600" />
       </div>
     );
   };

@@ -14,9 +14,14 @@ const CodeBlock = {
 
 const ContentSection = ({ content }) => {
   return (
-    <ReactMarkdown components={CodeBlock} rehypePlugins={[rehypeRaw]} className="markdown-class">
-      {content}
-    </ReactMarkdown>
+    <div className="markdown-class">
+      <ReactMarkdown
+        components={CodeBlock}
+        rehypePlugins={[rehypeRaw]}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 };
 

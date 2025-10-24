@@ -7,11 +7,16 @@ const nextConfig = {
   generateEtags: false,
   // Image optimization
   images: {
-    domains: [
-      "gfx.nrk.no",
-      "upload.wikimedia.org",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "gfx.nrk.no",
+      },
     ],
-    formats: ['image/webp', 'image/avif'],
   },
   // Bundle analyzer (uncomment to analyze bundle)
   // webpack: (config, { isServer }) => {

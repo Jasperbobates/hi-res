@@ -45,16 +45,18 @@ const BlogPost = ({ post }) => {
       <div
         className={`container mx-auto mt-10 px-4 mob:px-4 desktop:px-8`}
       >
-        <Header isBlog={true} isResume={false} handleContactScroll={handleContactScroll} />
+        <Header handleContactScroll={handleContactScroll} />
         <div className="mt-10 flex flex-col">
           <div className="relative w-full h-56 tablet:h-96 rounded-lg shadow-lg overflow-hidden">
             <Image
               src={post.image}
               alt={post.title}
-              layout="fill"
-              objectFit={post.imagePosition === 'zoom-out' ? 'contain' : 'cover'}
-              objectPosition={post.imagePosition === 'left' ? 'left center' : 'center'}
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              quality={100}
+              style={{objectFit: post.imagePosition === 'zoom-out' ? 'contain' : 'cover', objectPosition: post.imagePosition === 'left' ? 'left center' : 'center'}}
               className="rounded-lg"
+              priority
             />
           </div>
           <h1
