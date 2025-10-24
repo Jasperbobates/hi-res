@@ -14,20 +14,17 @@ const { showResume, resume, skills } = data;
 const Resume = () => {
   const router = useRouter();
   const { theme, resolvedTheme } = useTheme();
-  const [mount, setMount] = useState(false);
+  const [mount, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMount(true);
-    if (!showResume) {
-      router.push("/");
-    }
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {setMounted(true);}, []);
+
   return (
     <>
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div  className="container mx-auto mb-10 px-2 tablet:px-4 laptop:px-8">
-        <Header isBlog isResume={true} />
+        <Header/>
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
             <div
@@ -58,6 +55,7 @@ const Resume = () => {
                         alt="Jasper Bonesmo Bates"
                         width={250}
                         height={250}
+                        priority
                         className="object-cover rounded-lg shadow-xl border-4 border-gray-200 dark:border-gray-600 w-full h-full"
                         sizes="(max-width: 768px) 80vw, 250px"
                       />
@@ -74,6 +72,7 @@ const Resume = () => {
                     alt="Jasper Bonesmo Bates"
                     width={250}
                     height={250}
+                    priority
                     className="object-cover rounded-lg shadow-xl border-4 border-gray-200 dark:border-gray-600 w-full h-full"
                     sizes="(max-width: 768px) 80vw, 250px"
                   />

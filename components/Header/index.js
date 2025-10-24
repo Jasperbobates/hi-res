@@ -7,7 +7,7 @@ import Link from "next/link";
 import Button from "../Button";
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog, isResume }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isResume }) => {
   const router = useRouter();
   const { theme, setTheme, resolvedTheme } = useTheme();
   // resolvedTheme gives the final "light" or "dark" after system preference
@@ -19,30 +19,55 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
 
   // Handle work and about navigation from other pages
   const handleWorkNavigation = (closeMenu) => {
-    if (handleWorkScroll) {
-      handleWorkScroll();
+    const isMainPage = router.pathname === "/";
+
+    if (isMainPage) {
+      // ✅ Smooth scroll if #work exists on the current page
+      const section = document.querySelector("#work");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     } else {
-      router.push('/#work');
+      // ✅ Navigate to home and then scroll
+      router.push("/#work");
     }
+
     if (closeMenu) closeMenu();
   };
 
   const handleAboutNavigation = (closeMenu) => {
-    if (handleAboutScroll) {
-      handleAboutScroll();
+    const isMainPage = router.pathname === "/";
+
+    if (isMainPage) {
+      // ✅ Smooth scroll if #about exists
+      const section = document.querySelector("#about");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     } else {
-      router.push('/#about');
+      router.push("/#about");
     }
+
     if (closeMenu) closeMenu();
   };
 
   // Handle contact navigation
   const handleContactNavigation = (closeMenu) => {
-    router.push('/#contact');
+  // Try to find a footer on the current page
+    const footer = document.querySelector("#footer") || document.querySelector("footer");
+
+    if (footer) {
+      // ✅ Smooth scroll to footer if it exists
+      footer.scrollIntoView({ behavior: "smooth", block: "end" });
+    } else {
+      // ✅ Fallback: redirect to landing page contact section
+      router.push("/#contact");
+    }
+
     if (closeMenu) closeMenu();
   };
 
-  useEffect(() => setMounted(true), []);
+useEffect(() => setMounted(true), []);
 
   return (
     <>
@@ -69,14 +94,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                       <Image
                         src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
                         alt="theme toggle"
-                        layout="fill"
-                        objectFit="contain"
+                        fill
+                        style={{ objectFit: "contain" }}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                   </Button>
                 )}
 
-                <Popover.Button className="text-sm p-1 m-1 rounded-lg">
+                <Popover.Button as="div" className="w-full text-left">
                   {mounted && (
                     <div className="h-6 w-6 relative">
                       <Image
@@ -90,8 +116,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                             : "cancel-white.svg"
                         }`}
                         alt="menu toggle"
-                        layout="fill"
-                        objectFit="contain"
+                        fill
+                        style={{ objectFit: "contain" }}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                   )}
@@ -104,67 +131,112 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 currentTheme === "dark" ? "bg-slate-800" : "bg-white"
               } shadow-md rounded-md`}
             >
-              {!isBlog ? (
+              {router.pathname === "/" ? (
                 <div className="grid grid-cols-1 gap-3">
+                  {/* About subsection */}
+                  <Popover className="relative">
+                    {({ open }) => (
+                      <>
+                        <Popover.Button as="div" className="w-full text-left">
+                          <Button>
+                            About
+                            <svg
+                              className={`ml-1 h-4 w-4 transform transition-transform ${open ? "rotate-180" : "rotate-0"}`}
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </Button>
+                        </Popover.Button>
+
+                        <Popover.Panel
+                          className={`ml-4 mt-2 flex flex-col gap-2 ${currentTheme === "dark" ? "bg-slate-800" : "bg-gray-50"
+                            } rounded-md p-2`}
+                        >
+                          <Button onClick={() => { handleAboutNavigation(close); }}>
+                            About Hi-Res
+                          </Button>
+                          {showResume && (
+                            <Link href="/resume">
+                                <Button onClick={close}>About Me / Jasper</Button>
+                            </Link>
+                          )}
+                        </Popover.Panel>
+                      </>
+                    )}
+                  </Popover>
+
                   <Button onClick={() => handleWorkNavigation(close)}>
                     Work
                   </Button>
-                  <Button onClick={() => handleAboutNavigation(close)}>
-                    About
-                  </Button>
+
                   {showBlog && (
                     <Link href="/blog">
-                      <a>
                         <Button onClick={close}>
                           Blog
                         </Button>
-                      </a>
-                    </Link>
-                  )}
-                  {showResume && (
-                    <Link href="/resume">
-                      <a>
-                        <Button onClick={close}>
-                          Resume
-                        </Button>
-                      </a>
                     </Link>
                   )}
                   <Button onClick={() => handleContactNavigation(close)}>
                     Contact
                   </Button>
                 </div>
+                
               ) : (
                 <div className="grid grid-cols-1 gap-3">
                   <Link href="/">
-                    <a>
                       <Button onClick={close}>
                         Home
                       </Button>
-                    </a>
                   </Link>
-                  <Button onClick={() => handleWorkNavigation(close)}>
-                    Work
-                  </Button>
-                  <Button onClick={() => handleAboutNavigation(close)}>
-                    About
-                  </Button>
+                    {/* About subsection */}
+                    <Popover className="relative">
+                      {({ open }) => (
+                        <>
+                          <Popover.Button as="div" className="w-full text-left">
+                            <Button>
+                              About
+                              <svg
+                                className={`ml-1 h-4 w-4 transform transition-transform ${open ? "rotate-180" : "rotate-0"}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </Button>
+                          </Popover.Button>
+
+                          <Popover.Panel
+                            className={`ml-4 mt-2 flex flex-col gap-2 ${currentTheme === "dark" ? "bg-slate-800" : "bg-gray-50"
+                              } rounded-md p-2`}
+                          >
+                            <Button onClick={() => { handleAboutNavigation(close); }}>
+                              About Hi-Res
+                            </Button>
+                            {showResume && (
+                              <Link href="/resume">
+                                  <Button onClick={close}>About Me / Jasper</Button>
+                              </Link>
+                            )}
+                          </Popover.Panel>
+                        </>
+                      )}
+                    </Popover>
+
+                    <Button onClick={() => handleWorkNavigation(close)}>
+                      Work
+                    </Button>
+
                   {showBlog && (
                     <Link href="/blog">
-                      <a>
                         <Button onClick={close}>
                           Blog
                         </Button>
-                      </a>
-                    </Link>
-                  )}
-                  {showResume && (
-                    <Link href="/resume">
-                      <a>
-                        <Button onClick={close}>
-                          Resume
-                        </Button>
-                      </a>
                     </Link>
                   )}
                   <Button onClick={() => handleContactNavigation(close)}>
@@ -179,9 +251,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
 
       {/* --- DESKTOP HEADER --- */}
       <div
-        className={`mt-10 mb-10 hidden flex-row items-center justify-between ${
-          currentTheme === "light" && "bg-white"
-        } dark:text-white tablet:flex`}
+        className={`mt-10 mb-10 hidden flex-row items-center justify-between ${mounted && currentTheme === "light" ? "bg-white" : ""
+          } dark:text-white tablet:flex`}
       >
         <h1
           onClick={() => router.push("/")}
@@ -190,32 +261,61 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
           {name}.
         </h1>
 
-        {!isBlog ? (
+        {router.pathname === "/" ? (
           <div className="flex items-center gap-3">
+            {/* About dropdown */}
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button as="div"
+                    className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100"
+                  >
+                    About
+                    <svg
+                      className={`ml-1 h-4 w-4 transform transition-transform ${open ? "rotate-180" : "rotate-0"
+                        }`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </Popover.Button>
+
+                  <Popover.Panel
+                    className={`absolute right-0 mt-2 w-48 rounded-md shadow-lg z-10 ${currentTheme === "dark" ? "bg-slate-800" : "bg-white"
+                      }`}
+                  >
+                    <div className="p-2 flex flex-col gap-1">
+                      <Button onClick={() => handleAboutNavigation()}>
+                        About Hi-Res
+                      </Button>
+                      {showResume && (
+                        <Link href="/resume">
+                            <Button>About Me / Jasper</Button>
+                        </Link>
+                      )}
+                    </div>
+                  </Popover.Panel>
+                </>
+              )}
+            </Popover>
+
             <Button onClick={() => handleWorkNavigation()}>
               Work
-            </Button>
-            <Button onClick={() => handleAboutNavigation()}>
-              About
             </Button>
 
             {showBlog && (
               <Link href="/blog">
-                <a>
                   <Button>
                     Blog
                   </Button>
-                </a>
-              </Link>
-            )}
-
-            {showResume && (
-              <Link href="/resume">
-                <a>
-                  <Button>
-                    Resume
-                  </Button>
-                </a>
               </Link>
             )}
 
@@ -232,8 +332,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   <Image
                     src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
                     alt="toggle theme"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    style={{ objectFit: "contain" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               </button>
@@ -242,36 +343,65 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
         ) : (
           <div className="flex items-center gap-3">
             <Link href="/">
-              <a>
                 <Button>
                   Home
                 </Button>
-              </a>
             </Link>
-            <Button onClick={() => handleWorkNavigation()}>
-              Work
-            </Button>
-            <Button onClick={() => handleAboutNavigation()}>
-              About
-            </Button>
-            {showBlog && (
-              <Link href="/blog">
-                <a>
-                  <Button>
-                    Blog
-                  </Button>
-                </a>
-              </Link>
-            )}
-            {showResume && (
-              <Link href="/resume">
-                <a>
-                  <Button>
-                    Resume
-                  </Button>
-                </a>
-              </Link>
-            )}
+              {/* About dropdown */}
+              <Popover className="relative">
+                {({ open }) => (
+                  <>
+                    <Popover.Button as="div"
+                      className="text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 text-black dark:text-white hover:scale-105 active:scale-100"
+                    >
+                      About
+                      <svg
+                        className={`ml-1 h-4 w-4 transform transition-transform ${open ? "rotate-180" : "rotate-0"
+                          }`}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </Popover.Button>
+
+                    <Popover.Panel
+                      className={`absolute right-0 mt-2 w-48 rounded-md shadow-lg z-10 ${currentTheme === "dark" ? "bg-slate-800" : "bg-white"
+                        }`}
+                    >
+                      <div className="p-2 flex flex-col gap-1">
+                        <Button onClick={() => handleAboutNavigation()}>
+                          About Hi-Res
+                        </Button>
+                        {showResume && (
+                          <Link href="/resume">
+                              <Button>About Me / Jasper</Button>
+                          </Link>
+                        )}
+                      </div>
+                    </Popover.Panel>
+                  </>
+                )}
+              </Popover>
+
+              <Button onClick={() => handleWorkNavigation()}>
+                Work
+              </Button>
+
+              {showBlog && (
+                <Link href="/blog">
+                    <Button>
+                      Blog
+                    </Button>
+                </Link>
+              )}
             <Button onClick={() => handleContactNavigation()}>
               Contact
             </Button>
@@ -283,8 +413,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   <Image
                     src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
                     alt="toggle theme"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    style={{ objectFit: "contain" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               </Button>

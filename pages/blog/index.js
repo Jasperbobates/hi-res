@@ -39,7 +39,7 @@ const Blog = ({ posts }) => {
         <div
           className={`container mx-auto mb-10 px-4 mob:px-4 desktop:px-8`}
         >
-          <Header isBlog={true} isResume={false}></Header>
+          <Header/>
           <div className="mt-10">
             <h1
               ref={text}
@@ -59,9 +59,9 @@ const Blog = ({ posts }) => {
                       <Image
                         src={post.image}
                         alt={post.title}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition={post.slug === 'firstblog' ? 'left center' : 'center'}
+                        fill
+                        style={{ objectFit: "cover", objectPosition: post.slug === 'firstblog' ? 'left center' : 'center' }}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="rounded-lg shadow-lg hover:scale-110 transition-all ease-out duration-300"
                       />
                     </div>

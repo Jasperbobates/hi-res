@@ -44,9 +44,7 @@ const ProjectPost = ({ project }) => {
       <div className="gradient-circle-bottom"></div>
 
       <div className={`container mx-auto mt-10 px-4 mob:px-4 desktop:px-8`}>
-        <Header 
-          isBlog={false} 
-          isResume={false} 
+        <Header
           handleContactScroll={handleFooterScroll}
         />
         <div className="mt-10 flex flex-col items-center">
@@ -58,16 +56,15 @@ const ProjectPost = ({ project }) => {
                 const w = parseFloat(parts[0]) || 1046;
                 const h = parseFloat(parts[1]) || 529;
                 return (
-                  <div className="w-full max-w-4xl">
+                  <div className="relative w-full max-w-4xl aspect-[4/3] mx-auto">
                     <Image
-                      src={project.image}
-                      alt={project.title}
-                      layout="responsive"
-                      width={w}
-                      height={h}
-                      objectFit="cover"
-                      objectPosition="center"
-                      className="rounded-lg shadow-lg"
+                      src="/images/project_pics/IDN_wells.png"
+                      alt="Indonesia Wells Project"
+                      fill
+                      priority
+                      quality={95}
+                      sizes="(max-width: 768px) 100vw, 800px"
+                      className="object-contain rounded-lg shadow-lg"
                     />
                   </div>
                 );
@@ -77,10 +74,13 @@ const ProjectPost = ({ project }) => {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={100}
+                  style={{ objectFit: "cover", objectPosition: "center" }}
                   className="rounded-lg shadow-lg"
+                  priority
+                  unoptimized
                 />
               </div>
             )

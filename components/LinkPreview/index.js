@@ -8,14 +8,25 @@ const LinkPreview = ({ link, showHeader = true }) => {
     if (url.includes('cpb.nl')) {
       return (
         <div className="w-12 h-12 relative">
-          <Image src="/images/preview_pics/CPB_publication.png" alt="CPB Publication" layout="fill" objectFit="contain" className="rounded" />
+          <Image src="/images/preview_pics/CPB_publication.png" 
+          alt="CPB Publication" 
+          fill
+          sizes="(max-width: 768px) 80vw, 200px"
+          style={{ objectFit: "contain" }} 
+          className="rounded" />
         </div>
       );
     }
     if (url.includes('1drv.ms') || url.includes('onedrive')) {
       return (
         <div className="w-12 h-12 relative">
-          <Image src="/images/preview_pics/Thesis_cover.jpg" alt="Master's Thesis" layout="fill" objectFit="cover" className="rounded" />
+          <Image src="/images/preview_pics/Thesis_cover.jpg" 
+          alt="Master's Thesis" 
+          fill 
+          sizes="(max-width: 768px) 80vw, 200px"
+          style={{ objectFit: "cover" }} 
+          className="rounded" />
+
         </div>
       );
     }
