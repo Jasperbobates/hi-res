@@ -161,7 +161,7 @@ useEffect(() => setMounted(true), []);
                           </Button>
                           {showResume && (
                             <Link href="/resume">
-                                <Button onClick={close}>About Me / Jasper</Button>
+                                <Button onClick={close}>About Jasper</Button>
                             </Link>
                           )}
                         </Popover.Panel>
@@ -220,7 +220,7 @@ useEffect(() => setMounted(true), []);
                             </Button>
                             {showResume && (
                               <Link href="/resume">
-                                  <Button onClick={close}>About Me / Jasper</Button>
+                                  <Button onClick={close}>About Jasper</Button>
                               </Link>
                             )}
                           </Popover.Panel>
@@ -298,7 +298,7 @@ useEffect(() => setMounted(true), []);
                       </Button>
                       {showResume && (
                         <Link href="/resume">
-                            <Button>About Me / Jasper</Button>
+                            <Button>About Jasper</Button>
                         </Link>
                       )}
                     </div>
@@ -382,7 +382,7 @@ useEffect(() => setMounted(true), []);
                         </Button>
                         {showResume && (
                           <Link href="/resume">
-                              <Button>About Me / Jasper</Button>
+                              <Button>About Jasper</Button>
                           </Link>
                         )}
                       </div>
