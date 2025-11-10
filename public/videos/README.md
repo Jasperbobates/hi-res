@@ -1,6 +1,6 @@
 # Videos Directory
 
-This directory is for storing video files for the TNO page.
+This directory is for storing video files for the OECD page.
 
 ## Supported Formats
 - MP4 (recommended for best compatibility)
@@ -9,7 +9,7 @@ This directory is for storing video files for the TNO page.
 
 ## Usage
 1. Add your video file(s) to this directory
-2. Update the video source path in `_posts/tno.md` if needed
+2. Update the video source path in `_temp-posts/OECD.md` if needed
 3. The video will be displayed with controls and responsive styling
 
 ## Example
@@ -23,5 +23,4 @@ This directory is for storing video files for the TNO page.
 - Keep video files reasonably sized for web delivery
 - Consider using video compression tools if files are too large
 - For very large videos, consider using a CDN or video hosting service
-
 

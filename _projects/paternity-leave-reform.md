@@ -1,6 +1,6 @@
 ---
 date: '2025-08-01T10:00:00.000Z'
-title: Take some time off fathers
+title: Drop the briefcase, dads
 tagline: Monitoring the change in take-up of paternity leave following a Dutch parental leave reform
 preview: >-
   An empirical study tracking the impact of Dutch parental leave reforms on paternity leave uptake rates and gender equality outcomes.

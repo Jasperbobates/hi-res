@@ -36,6 +36,8 @@ export default function MyDocument() {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Hi-Res by Jasper Bates" />
                 <meta name="twitter:image" content="https://hi-res.vercel.app/og-image.png" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <body>
                 <Main />
