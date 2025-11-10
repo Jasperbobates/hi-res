@@ -267,7 +267,7 @@ export default function Home() {
           className="mt-16 mob:mt-28 laptop:mt-40"
           ref={contactRef}
         >
-          <Footer />
+        <Footer showMakokoAttribution />
         </div>
       </div>
     </div>
