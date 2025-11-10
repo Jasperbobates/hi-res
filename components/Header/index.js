@@ -251,8 +251,11 @@ useEffect(() => setMounted(true), []);
 
       {/* --- DESKTOP HEADER --- */}
       <div
-        className={`mt-10 mb-10 hidden flex-row items-center justify-between ${mounted && currentTheme === "light" ? "bg-white" : ""
-          } dark:text-white tablet:flex`}
+        className={`mt-10 mb-10 hidden flex-row items-center justify-between rounded-xl px-4 py-3 transition-colors duration-300 ${
+          mounted && currentTheme === "light"
+            ? "bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50"
+            : ""
+        } dark:text-white tablet:flex`}
       >
         <h1
           onClick={() => router.push("/")}

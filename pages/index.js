@@ -94,16 +94,16 @@ export default function Home() {
         </div>
         <section className="relative isolate mt-10 laptop:mt-20">
           <div
-            className="pointer-events-none absolute left-1/2 w-screen -translate-x-1/2 -z-10"
-            style={{ top: "-150px", bottom: "-120px" }}
+            className="pointer-events-none absolute left-[-1rem] w-screen -z-10"
+            style={{ top: "-100px", bottom: "-100px" }}
           >
             <div
               className="relative h-full w-full"
               style={{
                 maskImage:
-                  "linear-gradient(to bottom, transparent 0%, black 20%, black 85%, transparent 100%)",
+                  "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
                 WebkitMaskImage:
-                  "linear-gradient(to bottom, transparent 0%, black 20%, black 85%, transparent 100%)",
+                  "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
               }}
             >
               <Image
@@ -115,7 +115,7 @@ export default function Home() {
                 sizes="100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-white/10 dark:bg-black/10" />
+              <div className="absolute inset-0 bg-transparent dark:bg-black/10" />
             </div>
           </div>
 
