@@ -94,8 +94,8 @@ export default function Home() {
         </div>
         <section className="relative isolate mt-10 laptop:mt-20">
           <div
-            className="pointer-events-none absolute left-[-1rem] w-screen -z-10"
-            style={{ top: "-100px", bottom: "-100px" }}
+            className="pointer-events-none absolute left-1/2 w-screen -translate-x-1/2 -z-10"
+            style={{ top: "-90px", bottom: "-100px" }}
           >
             <div
               className="relative h-full w-full"
