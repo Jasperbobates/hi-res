@@ -78,7 +78,7 @@ useEffect(() => setMounted(true), []);
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link cursor-pointer"
+                className="font-medium p-2 laptop:p-0 link cursor-pointer text-black dark:text-white"
               >
                 {name}.
               </h1>
@@ -251,15 +251,11 @@ useEffect(() => setMounted(true), []);
 
       {/* --- DESKTOP HEADER --- */}
       <div
-        className={`mt-10 mb-10 hidden flex-row items-center justify-between rounded-xl px-4 py-3 transition-colors duration-300 ${
-          mounted && currentTheme === "light"
-            ? "bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50"
-            : ""
-        } dark:text-white tablet:flex`}
+        className="mt-10 mb-10 hidden flex-row items-center justify-between text-black dark:text-white tablet:flex"
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-medium cursor-pointer"
+          className="font-medium cursor-pointer text-black dark:text-white"
         >
           {name}.
         </h1>

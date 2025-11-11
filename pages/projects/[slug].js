@@ -51,15 +51,14 @@ const ProjectPost = ({ project }) => {
           {project.image && (
             project.slug === 'public-investments' ? (
               (() => {
-                // Use next/image with responsive layout and an explicit aspect ratio
                 const parts = '1046/529'.split('/');
                 const w = parseFloat(parts[0]) || 1046;
                 const h = parseFloat(parts[1]) || 529;
                 return (
-                  <div className="relative w-full max-w-4xl aspect-[4/3] mx-auto">
+                  <div className="relative w-full max-w-4xl aspect-[1046/529] mx-auto">
                     <Image
-                      src="/images/project_pics/IDN_wells.png"
-                      alt="Indonesia Wells Project"
+                      src="/images/project_pics/CPB.PNG"
+                      alt="Public Investments Hero"
                       fill
                       priority
                       quality={95}
@@ -147,6 +146,4 @@ export async function getStaticPaths() {
   };
 }
 export default ProjectPost;
-
-
 
