@@ -53,8 +53,8 @@ export default function Home() {
   useIsomorphicLayoutEffect(() => {
     stagger(
       [textOne.current, textTwo.current, textThree.current, textFour.current],
-      { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
-      { y: 0, x: 0, transform: "scale(1)" }
+      { y: 40, x: -10, transform: "scale(0.95) skew(10deg)"},
+      { y: 0, x: 0, transform: "scale(1)", duration: 2 }
     );
   }, []);
 
@@ -93,38 +93,13 @@ export default function Home() {
           <Header />
         </div>
         <section className="relative isolate mt-10 laptop:mt-20">
-          <div
-            className="pointer-events-none absolute left-1/2 w-screen -translate-x-1/2 -z-10"
-            style={{ top: "-90px", bottom: "-100px" }}
-          >
-            <div
-              className="relative h-full w-full"
-              style={{
-                maskImage:
-                  "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
-                WebkitMaskImage:
-                  "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
-              }}
-            >
-              <Image
-                src="/images/Makoko_arial.png"
-                alt="Aerial view of Makoko"
-                fill
-                priority
-                fetchPriority="high"
-                sizes="100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-transparent dark:bg-black/10" />
-            </div>
-          </div>
 
           <div className="relative mt-5">
             {[textOne, textTwo, textThree, textFour].map((ref, i) => (
               <h1
                 key={i}
                 ref={ref}
-                className="text-5xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 text-white"
+                className="text-5xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 text-slate-900 dark:text-white"
               >
                 {data[`headerTagline${["One", "Two", "Three", "Four"][i]}`]}
               </h1>

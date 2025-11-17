@@ -13,6 +13,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isRe
   // resolvedTheme gives the final "light" or "dark" after system preference
   // resolution. Use it when deciding which icon/classes to show.
   const currentTheme = resolvedTheme || theme;
+  const logoSrc =
+    currentTheme === "dark"
+      ? "/apple-touch-icon.png"
+      : "/hi-res_light.png";
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
@@ -76,12 +80,28 @@ useEffect(() => setMounted(true), []);
         {({ open, close }) => (
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
-              <h1
-                onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link cursor-pointer text-black dark:text-white"
-              >
-                {name}.
-              </h1>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => router.push("/")}
+                  className="relative h-10 w-10"
+                  aria-label="Navigate to Hi-Res home"
+                >
+                  <Image
+                    src={logoSrc}
+                    alt="Hi-Res logo"
+                    fill
+                    sizes="40px"
+                    style={{ objectFit: "contain" }}
+                  />
+                </button>
+                <h1
+                  onClick={() => router.push("/")}
+                  className="font-medium p-2 laptop:p-0 link cursor-pointer text-black dark:text-white"
+                >
+                  {name}.
+                </h1>
+              </div>
 
               <div className="flex items-center">
                 {data.darkMode && mounted && (
@@ -156,12 +176,17 @@ useEffect(() => setMounted(true), []);
                           className={`ml-4 mt-2 flex flex-col gap-2 ${currentTheme === "dark" ? "bg-slate-800" : "bg-gray-50"
                             } rounded-md p-2`}
                         >
-                          <Button onClick={() => { handleAboutNavigation(close); }}>
-                            About Hi-Res
+                          <Button
+                            onClick={() => { handleAboutNavigation(close); }}
+                            classes="w-full justify-start"
+                          >
+                            Hi-Res
                           </Button>
                           {showResume && (
-                            <Link href="/resume">
-                                <Button onClick={close}>About Jasper</Button>
+                            <Link href="/resume" className="block w-full">
+                                <Button onClick={close} classes="w-full justify-start">
+                                  Jasper
+                                </Button>
                             </Link>
                           )}
                         </Popover.Panel>
@@ -215,12 +240,17 @@ useEffect(() => setMounted(true), []);
                             className={`ml-4 mt-2 flex flex-col gap-2 ${currentTheme === "dark" ? "bg-slate-800" : "bg-gray-50"
                               } rounded-md p-2`}
                           >
-                            <Button onClick={() => { handleAboutNavigation(close); }}>
-                              About Hi-Res
+                            <Button
+                              onClick={() => { handleAboutNavigation(close); }}
+                              classes="w-full justify-start"
+                            >
+                              Hi-Res
                             </Button>
                             {showResume && (
-                              <Link href="/resume">
-                                  <Button onClick={close}>About Jasper</Button>
+                              <Link href="/resume" className="block w-full">
+                                  <Button onClick={close} classes="w-full justify-start">
+                                    Jasper
+                                  </Button>
                               </Link>
                             )}
                           </Popover.Panel>
@@ -253,12 +283,28 @@ useEffect(() => setMounted(true), []);
       <div
         className="mt-10 mb-10 hidden flex-row items-center justify-between text-black dark:text-white tablet:flex"
       >
-        <h1
-          onClick={() => router.push("/")}
-          className="font-medium cursor-pointer text-black dark:text-white"
-        >
-          {name}.
-        </h1>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => router.push("/")}
+            className="relative h-12 w-12"
+            aria-label="Navigate to Hi-Res home"
+          >
+            <Image
+              src={logoSrc}
+              alt="Hi-Res logo"
+              fill
+              sizes="48px"
+              style={{ objectFit: "contain" }}
+            />
+          </button>
+          <h1
+            onClick={() => router.push("/")}
+            className="font-medium cursor-pointer text-black dark:text-white"
+          >
+            {name}.
+          </h1>
+        </div>
 
         {router.pathname === "/" ? (
           <div className="flex items-center gap-3">
@@ -292,12 +338,17 @@ useEffect(() => setMounted(true), []);
                       }`}
                   >
                     <div className="p-2 flex flex-col gap-1">
-                      <Button onClick={() => handleAboutNavigation()}>
-                        About Hi-Res
+                      <Button
+                        onClick={() => handleAboutNavigation()}
+                        classes="w-full justify-start"
+                      >
+                        Hi-Res
                       </Button>
                       {showResume && (
-                        <Link href="/resume">
-                            <Button>About Jasper</Button>
+                        <Link href="/resume" className="block w-full">
+                            <Button classes="w-full justify-start">
+                              Jasper
+                            </Button>
                         </Link>
                       )}
                     </div>
@@ -371,21 +422,26 @@ useEffect(() => setMounted(true), []);
                       </svg>
                     </Popover.Button>
 
-                    <Popover.Panel
-                      className={`absolute right-0 mt-2 w-48 rounded-md shadow-lg z-10 ${currentTheme === "dark" ? "bg-slate-800" : "bg-white"
-                        }`}
-                    >
-                      <div className="p-2 flex flex-col gap-1">
-                        <Button onClick={() => handleAboutNavigation()}>
-                          About Hi-Res
-                        </Button>
-                        {showResume && (
-                          <Link href="/resume">
-                              <Button>About Jasper</Button>
-                          </Link>
-                        )}
-                      </div>
-                    </Popover.Panel>
+                  <Popover.Panel
+                    className={`absolute right-0 mt-2 w-48 rounded-md shadow-lg z-10 ${currentTheme === "dark" ? "bg-slate-800" : "bg-white"
+                      }`}
+                  >
+                    <div className="p-2 flex flex-col gap-1">
+                      <Button
+                        onClick={() => handleAboutNavigation()}
+                        classes="w-full justify-start"
+                      >
+                        Hi-Res
+                      </Button>
+                      {showResume && (
+                        <Link href="/resume" className="block w-full">
+                            <Button classes="w-full justify-start">
+                              Jasper
+                            </Button>
+                        </Link>
+                      )}
+                    </div>
+                  </Popover.Panel>
                   </>
                 )}
               </Popover>
