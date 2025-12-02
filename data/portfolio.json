@@ -88,9 +88,9 @@
             "description": "Apply statistics to measure the effectiveness of interventions."
         }
     ],
-    "aboutpara": "Hi-Res stands for High <span class='text-blue-600 dark:text-blue-400 font-semibold'>Resolution</span>, High <span class='text-green-600 dark:text-green-400 font-semibold'>Resilience</span>, and High <span class='text-purple-600 dark:text-purple-400 font-semibold'>Resolve</span>. It seeks an alternative way to convey environmental and socio-economic data with high <span class='text-blue-600 dark:text-blue-400 font-semibold'>resolution</span> that is accessible to everyone. It focuses on <span class='text-green-600 dark:text-green-400 font-semibold'>resilience</span>, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes <span class='text-purple-600 dark:text-purple-400 font-semibold'>resolve</span>, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an environmental economist with a passion for spatial analytics and data-driven solutions.",
+    "aboutpara": "Hi-Res stands for High <span class='text-blue-600 dark:text-blue-400 font-semibold'>Resolution</span>, High <span class='text-green-600 dark:text-green-400 font-semibold'>Resilience</span>, and High <span class='text-purple-600 dark:text-purple-400 font-semibold'>Resolve</span>. It seeks an alternative way to convey socio-economic and environmental data with high <span class='text-blue-600 dark:text-blue-400 font-semibold'>resolution</span> that is accessible to everyone. It focuses on <span class='text-green-600 dark:text-green-400 font-semibold'>resilience</span>, to prepare and empower communities around the world in the face of climate change, resource scarcities and poverty. It emphasizes <span class='text-purple-600 dark:text-purple-400 font-semibold'>resolve</span>, as the catalyst to tackling complex challenges head-on. Hi-Res is created by Jasper Bates, an economist with a passion for spatial analytics and data-driven solutions.",
     "resume": {
-        "tagline": "👋  I'm an environmental economist with 3 years of experience in research, teaching, and advisory roles. International project experience in Hong Kong, Spain, the Netherlands, Norway, Greece, and the US. Fluent in English, and Norwegian, as well as working proficiency in Spanish and French. Skilled at working across NGOs, multinationals, academia, government, and startups.",
+        "tagline": "👋  I'm an economist with 3 years of experience in research, teaching, and advisory roles. International project experience in Hong Kong, Spain, the Netherlands, Norway, Greece, and the US. Fluent in English, and Norwegian, as well as working proficiency in Spanish and French. Skilled at working across NGOs, multinationals, academia, government, and startups.",
         "description": "",
         "experiences": [
             {
@@ -136,7 +136,7 @@
         ],
         "education": [ 
             { 
-                "degree": "Master of Science in Environmental Economics",
+                "degree": "Master of Science in Economics",
                 "university": "University of Amsterdam", 
                 "dates": "September 2022 - August 2024",
                 "location": "Amsterdam, Netherlands",

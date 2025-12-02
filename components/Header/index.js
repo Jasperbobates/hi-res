@@ -13,10 +13,6 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isRe
   // resolvedTheme gives the final "light" or "dark" after system preference
   // resolution. Use it when deciding which icon/classes to show.
   const currentTheme = resolvedTheme || theme;
-  const logoSrc =
-    currentTheme === "dark"
-      ? "/apple-touch-icon.png"
-      : "/hi-res_light.png";
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
@@ -71,7 +67,28 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isRe
     if (closeMenu) closeMenu();
   };
 
-useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), []);
+
+  const renderLogoImages = (sizes) => (
+    <>
+      <Image
+        src="/apple-touch-icon.png"
+        alt="Hi-Res logo"
+        fill
+        sizes={sizes}
+        className="hidden dark:block"
+        style={{ objectFit: "contain" }}
+      />
+      <Image
+        src="/hi-res_light.png"
+        alt="Hi-Res logo"
+        fill
+        sizes={sizes}
+        className="block dark:hidden"
+        style={{ objectFit: "contain" }}
+      />
+    </>
+  );
 
   return (
     <>
@@ -87,13 +104,7 @@ useEffect(() => setMounted(true), []);
                   className="relative h-10 w-10"
                   aria-label="Navigate to Hi-Res home"
                 >
-                  <Image
-                    src={logoSrc}
-                    alt="Hi-Res logo"
-                    fill
-                    sizes="40px"
-                    style={{ objectFit: "contain" }}
-                  />
+                  {renderLogoImages("40px")}
                 </button>
                 <h1
                   onClick={() => router.push("/")}
@@ -290,13 +301,7 @@ useEffect(() => setMounted(true), []);
             className="relative h-12 w-12"
             aria-label="Navigate to Hi-Res home"
           >
-            <Image
-              src={logoSrc}
-              alt="Hi-Res logo"
-              fill
-              sizes="48px"
-              style={{ objectFit: "contain" }}
-            />
+            {renderLogoImages("48px")}
           </button>
           <h1
             onClick={() => router.push("/")}
