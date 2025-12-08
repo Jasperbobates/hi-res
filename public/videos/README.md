@@ -9,7 +9,7 @@ This directory is for storing video files for the Welcome page.
 
 ## Usage
 1. Add your video file(s) to this directory
-2. Update the video source path in `_temp-posts/Welcome.md` if needed
+2. Update the video source path in `_temp-posts/welcome.md` if needed
 3. The video will be displayed with controls and responsive styling
 
 ## Example

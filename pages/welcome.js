@@ -64,7 +64,7 @@ const Welcome = ({ post }) => {
 
 export async function getStaticProps() {
   const post = getPostBySlug(
-    "Welcome",
+    "welcome",
     [
       "date",
       "slug",

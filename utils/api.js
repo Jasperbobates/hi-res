@@ -11,7 +11,22 @@ export function getPostSlugs() {
 
 export function getPostBySlug(slug, fields = [], directory = "_posts") {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(process.cwd(), directory, `${realSlug}.md`);
+  // Resolve file path in a case-insensitive manner so builds work on
+  // case-sensitive filesystems (e.g. Vercel Linux) as well as macOS.
+  let fullPath = join(process.cwd(), directory, `${realSlug}.md`);
+  if (!fs.existsSync(fullPath)) {
+    // Try to find a file that matches the slug case-insensitively
+    const dirPath = join(process.cwd(), directory);
+    try {
+      const files = fs.readdirSync(dirPath);
+      const match = files.find((f) => f.toLowerCase() === `${realSlug.toLowerCase()}.md`);
+      if (match) {
+        fullPath = join(dirPath, match);
+      }
+    } catch (e) {
+      // ignore and let the subsequent readFileSync throw the original error
+    }
+  }
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 

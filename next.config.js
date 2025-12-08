@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -28,6 +30,11 @@ const nextConfig = {
   //   }
   //   return config;
   // },
+  // Turbopack workspace root setting — ensures Next/Turbopack uses this
+  // project directory as the workspace root and removes the warning
+  turbopack: {
+    root: path.join(__dirname),
+  },
 }
 
 module.exports = nextConfig
