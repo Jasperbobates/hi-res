@@ -1,6 +1,6 @@
 ---
 date: '2025-10-19T12:00:00.000Z'
-title: Bienvenue OECD recruiters!
+title: Bienvenue Welcome recruiters!
 preview: A personal space where I share a bit about myself through video and text.
 image: /images/blog_pics/profile.jpg
 imagePosition: center

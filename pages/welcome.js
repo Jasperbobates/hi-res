@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 
-const OECD = ({ post }) => {
+const Welcome = ({ post }) => {
   const textOne = useRef();
   const textTwo = useRef();
 
@@ -31,7 +31,7 @@ const OECD = ({ post }) => {
   return (
     <>
       <Head>
-        <title>{"OECD - " + post.title}</title>
+        <title>{"Welcome - " + post.title}</title>
         <meta name="description" content={post.preview} />
       </Head>
 
@@ -64,7 +64,7 @@ const OECD = ({ post }) => {
 
 export async function getStaticProps() {
   const post = getPostBySlug(
-    "OECD",
+    "Welcome",
     [
       "date",
       "slug",
@@ -85,4 +85,4 @@ export async function getStaticProps() {
   };
 }
 
-export default OECD;
+export default Welcome;
