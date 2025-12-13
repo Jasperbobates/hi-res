@@ -6,8 +6,8 @@ const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"     // 👈 sets a visible default
-      enableSystem={true}      // 👈 respects OS-level dark/light preference
+      defaultTheme="dark"
+      enableSystem={false}
     >
       <Head>
         <link rel="icon" href="/favicon.ico" />

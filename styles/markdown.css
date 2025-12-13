@@ -355,3 +355,9 @@
     gap: 1rem !important;
   }
 }
+
+/* Video Wrapper */
+.video {
+  max-width: 800px;
+  margin: 2rem auto;
+}
