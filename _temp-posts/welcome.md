@@ -18,7 +18,7 @@ Thanks for visiting my personal website. I invite you to have a look around to g
 
 <div class="video">
   <video controls>
-    <source src="/videos/UCL_IIPP.MOV" />
+    <source src="/videos/UCL_IIPP.mp4" />
   </video>
 </div>
 ---
